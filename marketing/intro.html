@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>تعريف الشركة - شركة نجم كار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@500;700&display=block">
+<style>
+:root {
+  --navy: #121838; --night: #0B0F26; --gold: #F4C247; --gold-2: #FFD566; --cream: #F4F1E8; --wa: #1FA855;
+  --display: "Lalezar", "IBM Plex Sans Arabic", sans-serif; --body: "IBM Plex Sans Arabic", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+body { font-family: var(--body); color: var(--cream); overflow: hidden; background: radial-gradient(100% 60% at 50% 0%, #26338A, var(--navy) 55%, var(--night)); }
+.ph { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gold-text { background: linear-gradient(180deg, var(--gold-2), var(--gold) 55%, #D69A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chip { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; border-radius: 999px; background: rgba(244,241,232,.08); border: 2px solid rgba(244,241,232,.22); }
+.chip::before { content: "✓"; color: var(--gold); }
+svg.i { width: 1em; height: 1em; }
+
+/* ---------- intro post 1080×1350 ---------- */
+.post { width: 1080px; height: 1350px; padding: 40px 54px 36px; display: flex; flex-direction: column; gap: 22px; }
+.post .hero { text-align: center; display: grid; justify-items: center; gap: 4px; }
+.post .hero img { width: 380px; filter: drop-shadow(0 14px 26px rgba(0,0,0,.5)); }
+.post .hero h1 { font-family: var(--display); font-weight: 400; font-size: 122px; line-height: 1; }
+.post .hero p { font-family: var(--display); font-size: 54px; line-height: 1.1; color: var(--cream); }
+.post .about { text-align: center; font-size: 34px; font-weight: 500; line-height: 1.6; color: rgba(244,241,232,.92); padding: 0 20px; }
+.post .about b { color: var(--gold); }
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.services div { display: grid; justify-items: center; gap: 6px; text-align: center; padding: 14px 8px; border-radius: 24px; background: rgba(244,241,232,.07); border: 2px solid rgba(244,241,232,.18); }
+.services svg { width: 62px; height: 62px; color: var(--gold); }
+.services b { font-size: 29px; line-height: 1.25; }
+.fleet { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; }
+.fleet div { border-radius: 22px; overflow: hidden; border: 4px solid var(--gold); }
+.fleet div:first-child { grid-row: 1 / -1; }
+.post .chips { display: flex; justify-content: center; gap: 12px; }
+.post .chip { font-size: 30px; padding: 8px 22px; }
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact a { display: flex; align-items: center; justify-content: center; gap: 14px; border-radius: 24px; padding: 14px 20px; color: #fff; text-decoration: none; }
+.contact .wa { background: var(--wa); }
+.contact .call { background: var(--gold); color: var(--navy); }
+.contact svg { width: 50px; height: 50px; }
+.contact span { display: grid; line-height: 1.05; }
+.contact small { font-size: 26px; font-weight: 700; }
+.contact strong { direction: ltr; font-family: var(--display); font-weight: 400; font-size: 52px; }
+.site { text-align: center; font-size: 27px; font-weight: 700; margin-top: -10px; opacity: .9; }
+.site b { direction: ltr; unicode-bidi: isolate; color: var(--gold); }
+
+/* ---------- facebook cover 1640×624 ---------- */
+.cover { width: 1640px; height: 624px; position: relative; }
+.cover .cars { position: absolute; inset: 0 auto 0 0; width: 900px; display: flex; direction: ltr; }
+.cover .cars div { flex: 1; margin-left: -70px; clip-path: polygon(70px 0, 100% 0, calc(100% - 70px) 100%, 0 100%); position: relative; }
+.cover .cars div:first-child { margin-left: 0; clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%); }
+.cover .cars div::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 4px var(--gold); clip-path: inherit; }
+.cover .fade { position: absolute; inset: 0 auto 0 0; width: 900px; background: linear-gradient(90deg, rgba(11,15,38,.0) 60%, rgba(11,15,38,.9) 92%, var(--navy)); pointer-events: none; }
+.cover .text { position: absolute; right: 130px; top: 0; bottom: 30px; width: 640px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.cover .brand { display: flex; align-items: center; gap: 22px; }
+.cover .brand img { width: 250px; filter: drop-shadow(0 10px 20px rgba(0,0,0,.5)); }
+.cover h1 { font-family: var(--display); font-weight: 400; font-size: 104px; line-height: 1; }
+.cover .tag { font-family: var(--display); font-size: 52px; line-height: 1.1; }
+.cover .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.cover .chip { font-size: 26px; padding: 6px 18px; }
+.cover .phone { display: inline-flex; align-self: flex-start; align-items: center; gap: 14px; background: var(--wa); border-radius: 18px; padding: 10px 24px; margin-top: 6px; }
+.cover .phone svg { width: 40px; height: 40px; }
+.cover .phone strong { direction: ltr; font-family: var(--display); font-weight: 400; font-size: 46px; line-height: 1; }
+.cover .phone small { font-size: 24px; font-weight: 700; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
+  <symbol id="road" viewBox="0 0 24 24"><path fill="currentColor" d="M9.2 2h2l-.3 4h2.2l-.3-4h2l3.6 20h-5.1l-.3-4h-2l-.3 4H5.6zM11 10l-.3 4h2.6l-.3-4z"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm-1-6h2v3h-2zm0 19h2v3h-2zM1 11h3v2H1zm19 0h3v2h-3zM4.2 5.6l1.4-1.4 2.1 2.1-1.4 1.4zm12.1 12.1 1.4-1.4 2.1 2.1-1.4 1.4zM4.2 18.4l2.1-2.1 1.4 1.4-2.1 2.1zM16.3 6.3l2.1-2.1 1.4 1.4-2.1 2.1z"/></symbol>
+  <symbol id="group" viewBox="0 0 24 24"><path fill="currentColor" d="M8 11a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm8.5 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM1 19c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5v1H1zm15 1v-1c0-1.9-.8-3.5-2.1-4.6.8-.3 1.6-.4 2.6-.4 3.3 0 5.5 1.8 5.5 4.5V20z"/></symbol>
+</svg>
+<script>
+const PHONE = "01043950220";
+const SITE = "nagmcars.github.io/travels";
+const FOCUS = { elantra: "center 62%", camry: "60% 55%", hiace: "center 62%", sportage: "30% 60%", octavia: "62% 62%", tucson: "35% 58%", fortuner: "62% 55%" };
+const photo = (c) => `<img class="ph" src="../images/${c}.jpg" style="object-position:${FOCUS[c]}" alt="">`;
+const icon = (id) => `<svg><use href="#${id}"/></svg>`;
+const CHIPS = ["سعر ثابت", "من الباب للباب", "كباتن محترمين", "ملاكي وهايس"];
+
+const POST = `
+  <section class="hero">
+    <img src="../images/logo.svg" alt="">
+    <h1 class="gold-text">شركة نجم كار</h1>
+    <p>سفرك ومشاويرك في معادها</p>
+  </section>
+  <p class="about">شركة نقل ركاب بعربيات <b>ملاكي وهايس</b> حديثة ومكيفة، مع كباتن محترمين.
+    بنستلمك من <b>باب بيتك</b> ونوصلك لأي مكان في مصر، <b>بسعر ثابت</b> تعرفه قبل ما تتحرك.</p>
+  <div class="services">
+    <div>${icon("plane")}<b>توصيل واستقبال المطار</b></div>
+    <div>${icon("road")}<b>سفر بين المحافظات</b></div>
+    <div>${icon("sun")}<b>رحلات المصايف</b></div>
+    <div>${icon("group")}<b>مشاوير العيلة والمجموعات</b></div>
+  </div>
+  <div class="fleet">${["elantra", "hiace", "sportage", "octavia", "tucson"].map((c) => `<div>${photo(c)}</div>`).join("")}</div>
+  <div class="chips">${CHIPS.map((c) => `<span class="chip">${c}</span>`).join("")}</div>
+  <div class="contact">
+    <a class="wa">${icon("wa")}<span><small>احجز على واتساب</small><strong>${PHONE}</strong></span></a>
+    <a class="call">${icon("phone")}<span><small>أو اتصل بينا</small><strong>${PHONE}</strong></span></a>
+  </div>
+  <p class="site">الأسعار والحجز: <b>${SITE}</b></p>`;
+
+const COVER = `
+  <div class="cars">${["sportage", "hiace", "fortuner", "elantra"].map((c) => `<div>${photo(c)}</div>`).join("")}</div>
+  <div class="fade"></div>
+  <div class="text">
+    <div class="brand"><img src="../images/logo.svg" alt=""><h1 class="gold-text">شركة<br>نجم كار</h1></div>
+    <p class="tag">سفرك ومشاويرك في معادها</p>
+    <div class="chips">${["المطار", "كل المحافظات", "من الباب للباب"].map((c) => `<span class="chip">${c}</span>`).join("")}</div>
+    <span class="phone">${icon("wa")}<small>احجز</small><strong>${PHONE}</strong></span>
+  </div>`;
+
+const view = new URLSearchParams(location.search).get("v") ?? "post";
+document.body.className = view;
+document.body.insertAdjacentHTML("beforeend", view === "cover" ? COVER : POST);
+</script>
+</body>
+</html>
