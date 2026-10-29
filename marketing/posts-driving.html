@@ -35,7 +35,9 @@ h1 { font-family: var(--display); font-weight: 400; line-height: 1.02; text-alig
 
 /* 1: fear hook */
 .p1 h1 { font-size: 150px; color: var(--gold); }
-.p1 .hero { flex: 1; min-height: 0; position: relative; border-radius: 30px; overflow: hidden; border: 5px solid var(--gold); }
+.p1 .hero { flex: 1; min-height: 0; display: grid; grid-template: 1.6fr 1fr / repeat(3, 1fr); gap: 12px; }
+.tile { position: relative; border-radius: 24px; overflow: hidden; border: 4px solid var(--gold); min-height: 0; }
+.p1 .hero .tile:first-child { grid-column: 1 / -1; }
 .p1 .hero .learner { position: absolute; top: 24px; left: 24px; width: 230px; height: 120px; font-size: 76px; transform: rotate(-6deg); }
 .p1 .points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .p1 .points span { font-size: 31px; font-weight: 700; padding: 12px 18px; border-radius: 18px; background: rgba(244,241,232,.08); border: 2px solid rgba(244,241,232,.22); }
@@ -45,24 +47,27 @@ h1 { font-family: var(--display); font-weight: 400; line-height: 1.02; text-alig
 .p2 .top { display: flex; align-items: center; justify-content: center; gap: 28px; }
 .p2 .learner { width: 170px; height: 170px; font-size: 120px; border-radius: 28px; }
 .p2 h1 { font-size: 112px; text-align: start; }
-.road { flex: 1; min-height: 0; position: relative; background: #2A2F3E; border-radius: 34px; padding: 26px 36px; display: grid; gap: 14px; align-content: space-evenly;
+.road { flex: 1; min-height: 0; position: relative; background: #2A2F3E; border-radius: 34px; padding: 18px 36px; display: grid; gap: 10px; align-content: space-evenly;
   background-image: repeating-linear-gradient(180deg, #F4C247 0 46px, transparent 46px 86px); background-size: 10px 100%; background-repeat: no-repeat; background-position: 50% 0; box-shadow: inset 0 0 0 10px #3B4152; }
-.step { position: relative; z-index: 1; display: flex; align-items: center; gap: 20px; width: 62%; background: #fff; color: var(--navy); border-radius: 24px; padding: 14px 22px; box-shadow: 0 10px 22px rgba(0,0,0,.3); }
+.step { position: relative; z-index: 1; display: flex; align-items: center; gap: 20px; width: 62%; background: #fff; color: var(--navy); border-radius: 24px; padding: 10px 22px; box-shadow: 0 10px 22px rgba(0,0,0,.3); }
 .step:nth-child(even) { margin-inline-start: auto; }
 .step b { flex: none; width: 76px; height: 76px; border-radius: 50%; background: var(--navy); color: var(--gold); display: grid; place-items: center; font-family: var(--display); font-weight: 400; font-size: 48px; }
 .step span { font-size: 34px; font-weight: 700; line-height: 1.25; }
 .step small { display: block; font-size: 25px; font-weight: 500; opacity: .75; }
 .p2 .sub { font-size: 34px; }
+.p2 .cars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; height: 190px; flex: none; }
+.p2 .cars .tile { border-color: var(--navy); }
 
 /* 3: automatic vs manual */
 .p3 h1 { font-size: 116px; }
 .p3 h1 em { font-style: normal; color: #B9800F; }
-.gears { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
-.gear { display: flex; flex-direction: column; gap: 12px; background: #fff; border: 3px solid rgba(18,24,56,.15); border-radius: 30px; padding: 16px; box-shadow: 0 12px 28px rgba(18,24,56,.12); }
-.gear .pic { flex: 1; min-height: 0; border-radius: 22px; overflow: hidden; }
+.gears { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr); gap: 18px; position: relative; }
+.gear { min-height: 0; display: flex; flex-direction: column; gap: 12px; background: #fff; border: 3px solid rgba(18,24,56,.15); border-radius: 30px; padding: 16px; box-shadow: 0 12px 28px rgba(18,24,56,.12); }
+.gear .pic { flex: 1; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+.gear .pic div { border-radius: 20px; overflow: hidden; min-height: 0; }
 .gear h2 { font-family: var(--display); font-weight: 400; font-size: 70px; text-align: center; line-height: 1; }
 .gear p { text-align: center; font-size: 29px; font-weight: 700; color: #4A5070; }
-.gear svg.knob { width: 120px; height: 120px; align-self: center; color: var(--navy); }
+.gear svg.knob { width: 96px; height: 96px; align-self: center; color: var(--navy); }
 .gears .and { position: absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font-family: var(--display); font-size: 70px; border: 6px solid var(--navy); z-index: 2; }
 .p3 .chips { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .p3 .chips span { font-size: 30px; font-weight: 700; padding: 10px 22px; border-radius: 999px; background: var(--navy); color: var(--gold); }
@@ -84,7 +89,7 @@ const POSTS = [
     <main class="p1">
       <h1>خايف تسوق؟</h1>
       <p class="sub">هنعلمك خطوة بخطوة، لحد ما تسوق لوحدك وانت واثق</p>
-      <div class="hero">${photo("sentra", "40% 58%")}<span class="learner">تعليم</span></div>
+      <div class="hero"><div class="tile">${photo("sentra", "40% 58%")}<span class="learner">تعليم</span></div><div class="tile">${photo("mgzs", "30% 60%")}</div><div class="tile">${photo("octavia", "62% 62%")}</div><div class="tile">${photo("fortuner", "62% 55%")}</div></div>
       <div class="points"><span>كابتن صبور ومحترم</span><span>من الصفر خالص</span><span>أوتوماتيك ومانيوال</span><span>الكابتن يعدّي عليك</span></div>
     </main>` },
   { theme: "gold", html: `
@@ -96,6 +101,7 @@ const POSTS = [
         <div class="step"><b>٣</b><span>الزحمة والطلوع<small>جوه المدينة ووقت الذروة</small></span></div>
         <div class="step"><b>٤</b><span>الطريق السريع<small>وتسوق لوحدك وانت مطمن</small></span></div>
       </div>
+      <div class="cars">${[["peugeot","30% 60%"],["sportage","30% 60%"],["corolla","center 62%"],["lancer","55% 60%"]].map(([c,f]) => `<div class="tile">${photo(c, f)}</div>`).join("")}</div>
       <p class="sub">مواعيد تناسبك، الصبح أو بالليل</p>
     </main>` },
   { theme: "cream", html: `
@@ -103,8 +109,8 @@ const POSTS = [
       <h1>أوتوماتيك ولا <em>مانيوال</em>؟</h1>
       <p class="sub">الاتنين عندنا، اختار اللي يريحك</p>
       <div class="gears">
-        <div class="gear"><svg class="knob"><use href="#auto"/></svg><h2>أوتوماتيك</h2><p>أسهل وأسرع في التعلم</p><div class="pic">${photo("elantra")}</div></div>
-        <div class="gear"><svg class="knob"><use href="#manual"/></svg><h2>مانيوال</h2><p>تتحكم في أي عربية</p><div class="pic">${photo("accent", "62% 55%")}</div></div>
+        <div class="gear"><svg class="knob"><use href="#auto"/></svg><h2>أوتوماتيك</h2><p>أسهل وأسرع في التعلم</p><div class="pic"><div>${photo("elantra")}</div><div>${photo("camry", "60% 55%")}</div></div></div>
+        <div class="gear"><svg class="knob"><use href="#manual"/></svg><h2>مانيوال</h2><p>تتحكم في أي عربية</p><div class="pic"><div>${photo("lancer", "55% 60%")}</div><div>${photo("optra", "68% 50%")}</div></div></div>
         <span class="and">و</span>
       </div>
       <div class="chips"><span>تعليم سواقة</span><span>من الصفر</span><span>مواعيد مرنة</span><span>الكابتن يعدّي عليك</span></div>
