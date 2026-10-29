@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>باقة بوستات - شركة نجم كار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@500;700&display=block">
+<style>
+:root {
+  --navy: #121838; --gold: #F4C247; --wa: #1FA855;
+  --display: "Lalezar", "IBM Plex Sans Arabic", sans-serif; --body: "IBM Plex Sans Arabic", sans-serif;
+}
+.navy  { --bg: radial-gradient(90% 55% at 50% 0%, #23307A, #0F1433 72%); --fg: #F4F1E8; --accent: #F4C247; --card: rgba(244,241,232,.08); --line: rgba(244,241,232,.22); }
+.gold  { --bg: linear-gradient(170deg, #FFD566, #F4C247 55%, #E9AE2A); --fg: #121838; --accent: #121838; --card: rgba(18,24,56,.08); --line: rgba(18,24,56,.25); }
+.cream { --bg: #FFF8E6; --fg: #121838; --accent: #B9800F; --card: #fff; --line: rgba(18,24,56,.18); }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body { font-family: var(--body); color: var(--fg); background: var(--bg); padding: 44px 48px 36px; display: flex; flex-direction: column; gap: 26px; }
+
+.brand { align-self: center; display: flex; align-items: center; gap: 14px; background: var(--navy); color: var(--gold); padding: 10px 30px 10px 34px; border-radius: 999px; box-shadow: 0 8px 22px rgba(0,0,0,.25); }
+.brand img { height: 62px; width: auto; }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 46px; line-height: 1; }
+
+main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 24px; }
+h1 { font-family: var(--display); font-weight: 400; line-height: 1.02; text-align: center; color: var(--accent); }
+.sub { text-align: center; font-size: 40px; font-weight: 700; line-height: 1.35; }
+.photo { flex: 1; min-height: 0; border-radius: 30px; overflow: hidden; border: 5px solid var(--accent); background: #000; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block; }
+.photo.cerato img { object-position: 72% 60%; }
+
+/* route */
+.kicker { align-self: center; font-size: 34px; font-weight: 700; padding: 6px 26px; border-radius: 999px; border: 3px solid var(--line); }
+.route h1 { font-size: 112px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 26px; }
+.route h1 i { font-style: normal; font-size: .7em; color: var(--fg); opacity: .7; }
+.meta { text-align: center; font-size: 34px; font-weight: 700; opacity: .85; margin-top: -10px; }
+.prices { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.prices div { background: var(--card); border: 3px solid var(--line); border-radius: 26px; padding: 14px 20px; text-align: center; }
+.prices small { display: block; font-size: 32px; font-weight: 700; opacity: .85; }
+.prices b { font-family: var(--display); font-weight: 400; font-size: 84px; line-height: 1.05; color: var(--accent); }
+.prices em { font-style: normal; font-family: var(--body); font-weight: 700; font-size: 32px; color: var(--fg); }
+
+/* hook */
+.hook h1 { font-size: 140px; }
+
+/* full-bleed photo */
+body.full { padding: 0; gap: 0; position: relative; color: #fff; background: #0F1433; }
+.full .bg { position: absolute; inset: 0 0 auto; height: 74%; }
+.full .bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; }
+.full .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,51,.55) 0%, rgba(15,20,51,0) 22%, rgba(15,20,51,0) 55%, #0F1433 98%); }
+.full .brand, .full main, .full .cta, .full .link { position: relative; }
+.full .brand { margin-top: 44px; }
+.full main { justify-content: flex-end; padding: 0 48px; gap: 14px; }
+.full h1 { font-size: 150px; color: var(--gold); text-shadow: 0 6px 24px rgba(0,0,0,.5); }
+.full .sub { color: #fff; }
+.full .cta { margin: 26px 48px 0; }
+.full .link { margin: 14px 0 36px; }
+
+/* car spotlight */
+.car .name { display: flex; justify-content: space-between; align-items: center; }
+.car h1 { font-size: 100px; text-align: start; }
+.car .seats { font-size: 34px; font-weight: 700; background: var(--accent); color: var(--navy); padding: 10px 26px; border-radius: 999px; }
+.navy .car .seats { color: var(--navy); }
+.gold .car .seats, .cream .car .seats { color: #fff; }
+.chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.chips span { text-align: center; font-size: 31px; font-weight: 700; padding: 14px 6px; border-radius: 20px; background: var(--card); border: 3px solid var(--line); }
+.chips span::before { content: "✓ "; color: var(--accent); }
+
+/* list */
+.list h1 { font-size: 118px; }
+.list ol { list-style: none; padding: 0; display: grid; gap: 16px; }
+.list li { display: flex; align-items: center; gap: 24px; font-size: 44px; font-weight: 700; background: var(--card); border: 3px solid var(--line); border-radius: 26px; padding: 18px 26px; }
+.list li b { flex: none; width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--bg-solid, #fff); font-family: var(--display); font-weight: 400; font-size: 46px; }
+.navy .list li b { color: var(--navy); }
+
+/* fares table */
+.table h1 { font-size: 112px; }
+.rows { flex: 1; display: grid; align-content: center; gap: 14px; }
+.rows div { display: grid; grid-template-columns: 1fr auto; align-items: center; background: var(--card); border: 3px solid var(--line); border-radius: 22px; padding: 16px 28px; }
+.rows span { font-size: 44px; font-weight: 700; }
+.rows strong { font-family: var(--display); font-weight: 400; font-size: 62px; color: var(--accent); }
+.rows strong em { font-style: normal; font-family: var(--body); font-size: 28px; font-weight: 700; color: var(--fg); }
+.note { text-align: center; font-size: 30px; font-weight: 700; opacity: .8; }
+
+/* value */
+.value { justify-content: center; }
+.value h1 { font-size: 150px; }
+.value h1 span { display: block; color: var(--fg); }
+.value .sub { font-size: 42px; }
+.strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; height: 290px; }
+.strip div { border-radius: 24px; overflow: hidden; border: 4px solid var(--accent); }
+.strip img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block; }
+
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--wa); color: #fff; border-radius: 26px; padding: 18px 30px; box-shadow: 0 8px 22px rgba(0,0,0,.2); }
+.cta .lbl { display: flex; align-items: center; gap: 14px; font-size: 42px; font-weight: 700; }
+.cta svg { width: 54px; height: 54px; }
+.cta .num { direction: ltr; font-family: var(--display); font-weight: 400; font-size: 64px; line-height: 1; }
+.link { text-align: center; font-size: 26px; font-weight: 700; margin-top: -12px; opacity: .9; }
+.link b { direction: ltr; unicode-bidi: isolate; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+</svg>
+<script>
+const PHONE = "01043950220";
+const SITE = "nagmcars.github.io/travels";
+const RATE_PER_KM = 12;
+const money = (n) => n.toLocaleString("en-US");
+const arNum = (n) => n.toLocaleString("ar-EG");
+const hiacePrice = (car) => Math.round((car * 1.1) / 10) * 10;
+const img = (car) => `<div class="photo ${car}"><img src="../images/${car}.jpg" alt=""></div>`;
+
+const ROUTES = [
+  { to: "مطار القاهرة", km: 150, note: "ساعتين", car: "elantra" },
+  { to: "كفر الزيات", km: 25, note: "تلت ساعة", car: "sunny" },
+  { to: "المحلة الكبرى", km: 40, note: "نص ساعة", car: "corolla" },
+  { to: "المنصورة", km: 90, note: "ساعة", car: "cerato" },
+  { to: "القاهرة", km: 120, note: "ساعة ونص", car: "hiace" },
+  { from: "كفر الزيات", to: "القاهرة", km: 130, note: "ساعة ونص", car: "elantra" },
+  { to: "الإسكندرية", km: 150, note: "ساعتين", car: "corolla" },
+  { to: "العين السخنة", km: 280, note: "٣ ساعات ونص", car: "hiace" },
+  { to: "الساحل الشمالي", km: 290, note: "لحد العلمين الجديدة", car: "sunny" },
+  { to: "الغردقة", km: 695, note: "٧ ساعات", car: "cerato" },
+].map((r) => ({ ...r, from: r.from ?? "طنطا", price: r.km * RATE_PER_KM }));
+
+const route = (r) => ({ layout: "route", ...r });
+const THEMES = ["navy", "gold", "cream"];
+
+const POSTS = [
+  { layout: "full", car: "elantra", title: "رايح المطار<br>الفجر؟", sub: "الكابتن عندك قبل المعاد ويوصلك لحد صالة السفر" },
+  route(ROUTES[0]),
+  { layout: "car", car: "elantra", name: "هيونداي إلنترا", seats: "٤ ركاب" },
+  { layout: "list", car: "corolla", title: "ليه نجم كار؟", items: ["سعر ثابت قبل ما تتحرك", "الكابتن عندك في معاده", "عربيات نضيفة ومكيفة", "من باب بيتك لباب المكان"] },
+  { layout: "hook", car: "hiace", title: "مسافر<br>مع العيلة؟", sub: "هايس واسعة ومكيفة، وشنطكم كلها معاكم" },
+  route(ROUTES[4]),
+  { layout: "value", title: "مفيش عداد<span>ومفيش مفاجآت</span>", sub: "السعر بيتقالك قبل ما تركب ومبيتغيرش" },
+  route(ROUTES[6]),
+  { layout: "full", car: "corolla", title: "راجع<br>من السفر؟", sub: "نستقبلك في المطار ونوصلك لحد باب البيت" },
+  { layout: "car", car: "hiace", name: "تويوتا هايس", seats: "للعيلة والمجموعات" },
+  route(ROUTES[1]),
+  { layout: "list", car: "sunny", title: "احجز في ٣ خطوات", numbered: true, items: ["ابعت على واتساب رايح فين وامتى", "نأكدلك السعر والمعاد", "الكابتن عندك في المعاد"] },
+  { layout: "hook", car: "sunny", title: "رايح الساحل<br>الصيف ده؟", sub: `من ${money(ROUTES[8].price)} جنيه لحد العلمين الجديدة` },
+  route(ROUTES[3]),
+  { layout: "table", title: "أشهر المشاوير", picks: [0, 4, 6, 3, 2] },
+  { layout: "car", car: "corolla", name: "تويوتا كورولا", seats: "٤ ركاب" },
+  route(ROUTES[5]),
+  { layout: "value", title: "الكيلو<span>بـ 12 جنيه بس</span>", sub: "100 كم = 1,200 جنيه والهايس أغلى بـ 10% بس" },
+  { layout: "full", car: "hiace", title: "عندك فرح<br>أو مناسبة؟", sub: "عربيات نضيفة توصلك إنت وضيوفك في المعاد" },
+  route(ROUTES[2]),
+  { layout: "hook", car: "cerato", title: "الغردقة؟<br>ولا يهمك", sub: `من ${money(ROUTES[9].price)} جنيه، ٧ ساعات مريحة` },
+  { layout: "car", car: "sunny", name: "نيسان صني", seats: "٤ ركاب" },
+  route(ROUTES[7]),
+  { layout: "list", car: "elantra", title: "إزاي بنحسب السعر؟", items: ["الكيلو بـ 12 جنيه للملاكي", "الهايس أغلى بـ 10% بس", "100 كم = 1,200 جنيه", "السعر ثابت مهما الطريق زحمة"] },
+  { layout: "full", car: "sunny", title: "مسافر<br>بكرة؟", sub: "احجز النهارده والعربية تبقى عندك في معادها" },
+  route(ROUTES[8]),
+  { layout: "car", car: "cerato", name: "كيا سيراتو", seats: "٤ ركاب" },
+  { layout: "value", title: "من الباب<span>للباب</span>", sub: "نستلمك من بيتك ونسلّمك لحد باب المكان اللي رايحه" },
+  route(ROUTES[9]),
+  { layout: "hook", car: "corolla", title: "مشوار<br>في القاهرة؟", sub: "كابتن عارف الطريق وعربية مكيفة، وانت مرتاح" },
+];
+
+const LAYOUTS = {
+  route: (p) => `
+    <main class="route">
+      <span class="kicker">مشوار ${p.to === "مطار القاهرة" ? "المطار" : "اليوم"}</span>
+      <h1><span>${p.from}</span><i>←</i><span>${p.to}</span></h1>
+      <p class="meta">حوالي ${arNum(p.km)} كم · ${p.note}</p>
+      ${img(p.car)}
+      <div class="prices">
+        <div><small>ملاكي</small><b><em>من</em> ${money(p.price)} <em>ج</em></b></div>
+        <div><small>هايس</small><b><em>من</em> ${money(hiacePrice(p.price))} <em>ج</em></b></div>
+      </div>
+    </main>`,
+  hook: (p) => `<main class="hook"><h1>${p.title}</h1><p class="sub">${p.sub}</p>${img(p.car)}</main>`,
+  full: (p) => `<main><h1>${p.title}</h1><p class="sub">${p.sub}</p></main>`,
+  car: (p) => `
+    <main class="car">
+      ${img(p.car)}
+      <div class="name"><h1>${p.name}</h1><span class="seats">${p.seats}</span></div>
+      <div class="chips"><span>نضيفة ومكيفة</span><span>كابتن محترم</span><span>سعر ثابت</span></div>
+    </main>`,
+  list: (p) => `
+    <main class="list"><h1>${p.title}</h1>
+      <ol>${p.items.map((t, i) => `<li><b>${p.numbered ? arNum(i + 1) : "✓"}</b>${t}</li>`).join("")}</ol>
+      ${img(p.car)}
+    </main>`,
+  table: (p) => `
+    <main class="table"><h1>${p.title}</h1>
+      <div class="rows">${p.picks.map((i) => ROUTES[i]).map((r) =>
+        `<div><span>${r.from} ← ${r.to}</span><strong><em>من</em> ${money(r.price)} <em>ج</em></strong></div>`).join("")}</div>
+      <p class="note">أسعار الملاكي، والهايس أغلى بـ 10% بس</p>
+    </main>`,
+  value: (p) => `
+    <main class="value"><h1>${p.title}</h1><p class="sub">${p.sub}</p>
+      <div class="strip">${["elantra", "hiace", "corolla"].map((c) => `<div><img src="../images/${c}.jpg" alt=""></div>`).join("")}</div>
+    </main>`,
+};
+
+const n = Number(new URLSearchParams(location.search).get("n") ?? 1);
+const post = POSTS[n - 1];
+document.body.className = post.layout === "full" ? "full navy" : THEMES[(n - 1) % THEMES.length];
+document.body.insertAdjacentHTML("beforeend", `
+  ${post.layout === "full" ? `<div class="bg"><img src="../images/${post.car}.jpg" alt=""></div>` : ""}
+  <header class="brand"><img src="../images/logo.svg" alt=""><b>شركة نجم كار</b></header>
+  ${LAYOUTS[post.layout](post)}
+  <div class="cta"><span class="lbl"><svg><use href="#wa"/></svg>احجز على واتساب</span><span class="num">${PHONE}</span></div>
+  <p class="link">الأسعار والحجز: <b>${SITE}</b></p>`);
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>بوستات الأسطول - شركة نجم كار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@500;700&display=block">
+<style>
+:root {
+  --navy: #121838; --gold: #F4C247; --wa: #1FA855; --road: #0B6B3A;
+  --display: "Lalezar", "IBM Plex Sans Arabic", sans-serif; --body: "IBM Plex Sans Arabic", sans-serif;
+}
+.navy  { --bg: radial-gradient(90% 55% at 50% 0%, #23307A, #0F1433 72%); --fg: #F4F1E8; --accent: #F4C247; --card: rgba(244,241,232,.08); --line: rgba(244,241,232,.22); }
+.gold  { --bg: linear-gradient(170deg, #FFD566, #F4C247 55%, #E9AE2A); --fg: #121838; --accent: #121838; --card: rgba(18,24,56,.08); --line: rgba(18,24,56,.25); }
+.cream { --bg: #FFF8E6; --fg: #121838; --accent: #B9800F; --card: #fff; --line: rgba(18,24,56,.18); }
+.stripe { --bg: repeating-linear-gradient(135deg, #121838 0 90px, #18205A 90px 180px); --fg: #F4F1E8; --accent: #F4C247; --card: rgba(244,241,232,.08); --line: rgba(244,241,232,.22); }
+.sunset { --bg: linear-gradient(180deg, #2B1B5A 0%, #A23B5C 55%, #F28C38 100%); --fg: #fff; --accent: #FFD566; --card: rgba(255,255,255,.12); --line: rgba(255,255,255,.3); }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body { font-family: var(--body); color: var(--fg); background: var(--bg); padding: 40px 48px 34px; display: flex; flex-direction: column; gap: 22px; }
+
+.brand { align-self: center; display: flex; align-items: center; gap: 14px; background: var(--navy); color: var(--gold); padding: 10px 30px 10px 34px; border-radius: 999px; box-shadow: 0 8px 22px rgba(0,0,0,.25); z-index: 2; }
+.brand img { height: 58px; width: auto; }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 44px; line-height: 1; }
+
+main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 20px; position: relative; }
+h1 { font-family: var(--display); font-weight: 400; font-size: 118px; line-height: 1.02; text-align: center; color: var(--accent); }
+.sub { text-align: center; font-size: 38px; font-weight: 700; line-height: 1.3; margin-top: -6px; }
+.ph { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.car { position: relative; border-radius: 26px; overflow: hidden; border: 4px solid var(--accent); background: #000; min-height: 0; }
+.car span, .tag {
+  position: absolute; right: 12px; bottom: 12px; background: var(--navy); color: var(--gold);
+  font-weight: 700; font-size: 25px; padding: 5px 18px; border-radius: 999px; border: 2px solid var(--gold); white-space: nowrap;
+}
+.cars { flex: 1; min-height: 0; display: grid; gap: 14px; }
+.big-two { grid-template: 1.35fr 1fr / 1fr 1fr; }
+.big-two .car:first-child { grid-column: 1 / -1; }
+.two-big { grid-template: 1fr 1.35fr / 1fr 1fr; }
+.two-big .car:last-child { grid-column: 1 / -1; }
+.rows3 { grid-template-rows: repeat(3, 1fr); }
+.side { grid-template: 1fr 1fr / 1.5fr 1fr; }
+.side .car:first-child { grid-row: 1 / -1; }
+.quad { grid-template: 1fr 1fr / 1fr 1fr; }
+.five { grid-template: 1.2fr 1fr / repeat(6, 1fr); }
+.five .car:nth-child(-n+2) { grid-column: span 3; }
+.five .car:nth-child(n+3) { grid-column: span 2; }
+.five .car span, .quad .car span { font-size: 22px; padding: 4px 14px; }
+
+/* boarding-pass ticket */
+.ticket-kicker { font-family: var(--display); font-size: 74px; line-height: 1; text-align: center; color: var(--accent); }
+.ticket {
+  flex: 1; min-height: 0; display: flex; flex-direction: column; background: #FFFDF6; color: var(--navy); border-radius: 36px; overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  -webkit-mask: radial-gradient(circle 34px at 0 68%, transparent 98%, #000) , radial-gradient(circle 34px at 100% 68%, transparent 98%, #000);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}
+.ticket .strip { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; background: var(--navy); padding: 6px; }
+.ticket .strip div { position: relative; border-radius: 18px; overflow: hidden; }
+.ticket .strip .tag { font-size: 21px; padding: 3px 12px; right: 8px; bottom: 8px; }
+.ticket .legs { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 22px 40px 14px; gap: 18px; }
+.ticket .legs small { display: block; font-size: 26px; font-weight: 700; color: #8A6A1F; }
+.ticket .legs b { font-family: var(--display); font-weight: 400; font-size: 70px; line-height: 1; }
+.ticket .legs div:last-child { text-align: left; }
+.ticket .legs svg { width: 96px; height: 96px; color: #C8901A; }
+.ticket .perf { border-top: 5px dashed #D9CFB4; margin: 6px 52px 0; }
+.ticket .stubs { display: grid; grid-template-columns: repeat(3, 1fr); padding: 16px 40px 24px; text-align: center; }
+.ticket .stubs small { display: block; font-size: 25px; font-weight: 700; color: #8A6A1F; }
+.ticket .stubs b { font-family: var(--display); font-weight: 400; font-size: 54px; line-height: 1.1; }
+.ticket .stubs em { font-style: normal; font-family: var(--body); font-size: 24px; font-weight: 700; }
+
+/* road sign */
+.sign { align-self: center; width: 900px; background: var(--road); color: #fff; border-radius: 30px; padding: 12px; box-shadow: 0 16px 36px rgba(0,0,0,.35); }
+.sign div { border: 6px solid #fff; border-radius: 22px; padding: 18px 34px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; }
+.sign svg { width: 120px; height: 120px; }
+.sign b { font-family: var(--display); font-weight: 400; font-size: 104px; line-height: 1; }
+.sign small { display: block; font-size: 30px; font-weight: 700; opacity: .9; }
+.sign .km { font-family: var(--display); font-size: 64px; text-align: center; line-height: 1; }
+.chips { display: flex; justify-content: center; gap: 14px; }
+.chips span { font-size: 34px; font-weight: 700; padding: 10px 26px; border-radius: 999px; background: var(--card); border: 3px solid var(--line); }
+.chips b { font-family: var(--display); font-weight: 400; font-size: 46px; color: var(--accent); }
+
+/* polaroids */
+.pols { flex: 1; min-height: 0; position: relative; }
+.pol { position: absolute; background: #fff; padding: 14px 14px 64px; border-radius: 8px; box-shadow: 0 16px 34px rgba(0,0,0,.35); width: 560px; height: 430px; }
+.pol img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; }
+.pol p { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-family: var(--display); font-size: 40px; color: var(--navy); }
+.pol:nth-child(1) { top: 0; right: 0; transform: rotate(4deg); }
+.pol:nth-child(2) { top: 150px; left: 0; transform: rotate(-6deg); }
+.pol:nth-child(3) { bottom: 0; right: 150px; transform: rotate(2deg); }
+.pol::before { content: ""; position: absolute; top: -18px; left: 50%; width: 130px; height: 40px; margin-left: -65px; background: rgba(244,194,71,.85); transform: rotate(-3deg); }
+
+/* whatsapp chat */
+.chat-title { font-family: var(--display); font-size: 86px; text-align: center; color: var(--accent); line-height: 1; }
+.chat { flex: 1; min-height: 0; background: #ECE5DD; border-radius: 34px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; color: #111; box-shadow: 0 16px 36px rgba(0,0,0,.3); overflow: hidden; }
+.chat .head { display: flex; align-items: center; gap: 14px; background: #075E54; color: #fff; margin: -22px -26px 4px; padding: 16px 26px; font-size: 32px; font-weight: 700; }
+.chat .head img { height: 46px; background: var(--navy); border-radius: 50%; padding: 6px; width: 58px; object-fit: contain; }
+.msg { max-width: 78%; padding: 12px 20px; border-radius: 22px; font-size: 32px; font-weight: 500; line-height: 1.4; box-shadow: 0 2px 2px rgba(0,0,0,.08); }
+.msg.me { align-self: flex-end; background: #DCF8C6; border-bottom-left-radius: 6px; }
+.msg.us { align-self: flex-start; background: #fff; border-bottom-right-radius: 6px; }
+.msg.pics { flex: 1; min-height: 0; max-width: 92%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 8px; }
+.msg.pics div { position: relative; border-radius: 14px; overflow: hidden; }
+.msg.pics .tag { font-size: 20px; padding: 2px 10px; right: 6px; bottom: 6px; }
+
+/* cascading cards */
+.cascade { flex: 1; min-height: 0; position: relative; }
+.cascade .car { position: absolute; width: 700px; height: 380px; box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+.cascade .car:nth-child(1) { top: 0; right: 0; transform: rotate(-3deg); }
+.cascade .car:nth-child(2) { top: 220px; left: 0; transform: rotate(3deg); }
+.cascade .car:nth-child(3) { bottom: 0; right: 40px; transform: rotate(-1.5deg); }
+
+/* departures board */
+.board { background: #141414; border: 8px solid #2A2A2A; border-radius: 26px; overflow: hidden; }
+.board .bar { display: flex; justify-content: space-between; background: #222; color: #FFB020; padding: 12px 30px; font-size: 30px; font-weight: 700; }
+.board .row { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 12px 30px; border-top: 2px solid #2C2C2C; }
+.board .row span { font-family: var(--display); font-size: 58px; color: #FFB020; text-shadow: 0 0 10px rgba(255,176,32,.4); line-height: 1.1; }
+.board .row strong { font-family: var(--display); font-weight: 400; font-size: 54px; color: #3DDC6E; }
+.board .row strong em { font-style: normal; font-family: var(--body); font-size: 24px; color: #9BE8B3; }
+.rings { flex: 1; min-height: 0; display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 16px 22px; }
+.rings.four { width: 680px; align-self: center; }
+.ring { width: 310px; height: 310px; border-radius: 50%; overflow: hidden; border: 8px solid var(--accent); box-shadow: 0 12px 28px rgba(0,0,0,.35); position: relative; flex: none; }
+.ring.sm { width: 280px; height: 280px; }
+
+/* big number */
+.bignum { flex: 1; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 10px; }
+.bignum strong { font-family: var(--display); font-weight: 400; font-size: 430px; line-height: .8; color: var(--accent); }
+.bignum p { font-family: var(--display); font-size: 92px; line-height: 1.05; }
+.bignum p small { display: block; font-family: var(--body); font-size: 36px; font-weight: 700; opacity: .9; margin-top: 10px; }
+.caption-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 28px; font-weight: 700; }
+.caption-row span { padding: 6px 18px; border-radius: 999px; background: var(--card); border: 2px solid var(--line); }
+
+/* versus */
+.versus { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
+.versus section { display: flex; flex-direction: column; gap: 12px; min-height: 0; background: var(--card); border: 3px solid var(--line); border-radius: 30px; padding: 16px; }
+.versus h2 { font-family: var(--display); font-weight: 400; font-size: 66px; text-align: center; color: var(--accent); line-height: 1; }
+.versus p { text-align: center; font-size: 30px; font-weight: 700; }
+.versus .car { flex: 1; }
+.versus .vs { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font-family: var(--display); font-size: 54px; border: 6px solid var(--navy); z-index: 2; }
+
+/* full-bleed hero car with insets */
+body.full { padding: 0; gap: 0; position: relative; color: #fff; background: #0F1433; }
+.full .bg { position: absolute; inset: 0 0 auto; height: 66%; }
+.full .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,20,51,.55) 0%, rgba(15,20,51,0) 22%, rgba(15,20,51,0) 50%, #0F1433 98%); }
+.full .brand, .full main, .full .cta, .full .link { position: relative; }
+.full .brand { margin-top: 40px; }
+.full main { justify-content: flex-end; padding: 0 48px; gap: 12px; }
+.full h1 { font-size: 132px; color: var(--gold); text-shadow: 0 6px 24px rgba(0,0,0,.5); }
+.full .sub { color: #fff; }
+.insets { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; height: 250px; margin-top: 10px; }
+.full .car { border-color: var(--gold); }
+.full .cta { margin: 22px 48px 0; }
+.full .link { margin: 12px 0 34px; }
+
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--wa); color: #fff; border-radius: 26px; padding: 16px 30px; box-shadow: 0 8px 22px rgba(0,0,0,.2); z-index: 2; }
+.cta .lbl { display: flex; align-items: center; gap: 14px; font-size: 40px; font-weight: 700; }
+.cta svg { width: 52px; height: 52px; }
+.cta .num { direction: ltr; font-family: var(--display); font-weight: 400; font-size: 62px; line-height: 1; }
+.link { text-align: center; font-size: 26px; font-weight: 700; margin-top: -10px; opacity: .9; }
+.link b { direction: ltr; unicode-bidi: isolate; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="car-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11a2 2 0 0 1 2 2v4a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1v-4a2 2 0 0 1 2-2Zm2.1 0h9.8l-1.1-3.4a.8.8 0 0 0-.8-.6H9a.8.8 0 0 0-.8.6L7.1 11ZM7 15.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm10 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></symbol>
+  <symbol id="arrow-left" viewBox="0 0 24 24"><path fill="currentColor" d="M10.6 4.6 3.2 12l7.4 7.4 1.8-1.8L8.1 13.3H21v-2.6H8.1l4.3-4.3z"/></symbol>
+</svg>
+<script>
+const PHONE = "01043950220";
+const SITE = "nagmcars.github.io/travels";
+const RATE_PER_KM = 12;
+const money = (n) => n.toLocaleString("en-US");
+const arNum = (n) => n.toLocaleString("ar-EG");
+const hiacePrice = (car) => Math.round((car * 1.1) / 10) * 10;
+
+// name, brand (no post repeats a brand), and the crop focus that keeps the car's face in frame.
+const CARS = {
+  elantra:  { name: "هيونداي إلنترا", brand: "hyundai", focus: "center 62%" },
+  octavia:  { name: "سكودا أوكتافيا", brand: "skoda", focus: "62% 62%" },
+  sunny:    { name: "نيسان صني", brand: "nissan", focus: "center 62%" },
+  fortuner: { name: "تويوتا فورتشنر", brand: "toyota", focus: "62% 55%" },
+  cerato:   { name: "كيا سيراتو", brand: "kia", focus: "72% 60%" },
+  peugeot:  { name: "بيجو 301", brand: "peugeot", focus: "30% 60%" },
+  lancer:   { name: "ميتسوبيشي لانسر", brand: "mitsubishi", focus: "55% 60%" },
+  corolla:  { name: "تويوتا كورولا", brand: "toyota", focus: "center 62%" },
+  mgzs:     { name: "إم جي ZS", brand: "mg", focus: "30% 60%" },
+  accent:   { name: "هيونداي أكسنت", brand: "hyundai", focus: "62% 55%" },
+  sentra:   { name: "نيسان سنترا", brand: "nissan", focus: "40% 58%" },
+  optra:    { name: "شيفروليه أوبترا", brand: "chevrolet", focus: "68% 50%" },
+  camry:    { name: "تويوتا كامري", brand: "toyota", focus: "60% 55%" },
+  sportage: { name: "كيا سبورتاج", brand: "kia", focus: "30% 60%" },
+  tucson:   { name: "هيونداي توسان", brand: "hyundai", focus: "35% 58%" },
+  hiace:    { name: "تويوتا هايس", brand: "toyota", focus: "center 62%" },
+};
+const ORDER = Object.keys(CARS);
+let cursor = 0;
+const pickCars = (count, must = []) => {
+  const out = [...must];
+  const brands = new Set(out.map((c) => CARS[c].brand));
+  while (out.length < count) {
+    const c = ORDER[cursor++ % ORDER.length];
+    if (out.includes(c) || brands.has(CARS[c].brand)) continue;
+    out.push(c);
+    brands.add(CARS[c].brand);
+  }
+  return out;
+};
+const photo = (c) => `<img class="ph" src="../images/${c}.jpg" style="object-position:${CARS[c].focus}" alt="">`;
+const tile = (c) => `<div class="car">${photo(c)}<span>${CARS[c].name}</span></div>`;
+const tagged = (c) => `<div>${photo(c)}<span class="tag">${CARS[c].name}</span></div>`;
+
+const ROUTES = [
+  { to: "مطار القاهرة", km: 150, note: "ساعتين" },
+  { to: "كفر الزيات", km: 25, note: "تلت ساعة" },
+  { to: "المحلة الكبرى", km: 40, note: "نص ساعة" },
+  { to: "المنصورة", km: 90, note: "ساعة" },
+  { to: "القاهرة", km: 120, note: "ساعة ونص" },
+  { from: "كفر الزيات", to: "القاهرة", km: 130, note: "ساعة ونص" },
+  { to: "الإسكندرية", km: 150, note: "ساعتين" },
+  { to: "العين السخنة", km: 280, note: "٣ ساعات ونص" },
+  { to: "الساحل الشمالي", km: 290, note: "٣ ساعات ونص" },
+  { to: "الغردقة", km: 695, note: "٧ ساعات" },
+].map((r) => ({ ...r, from: r.from ?? "طنطا", price: r.km * RATE_PER_KM }));
+
+const MESSAGES = [
+  ["اختار عربيتك", "ملاكي أو هايس، كله نضيف ومكيف"],
+  ["أسطول نجم كار", "عربيات حديثة جاهزة لكل مشاويرك"],
+  ["رايح المطار؟", "الطيارة مش هتستنى، والكابتن عندك بدري"],
+  ["سفر مريح", "عربية مكيفة وكابتن محترم طول الطريق"],
+  ["سعر ثابت", "بتعرف السعر قبل ما تركب ومبيتغيرش"],
+  ["مسافر؟", "إحنا عندك لحد باب البيت"],
+  ["مشوار بكرة؟", "احجزه النهارده والعربية عندك في معادها"],
+  ["رحلة الصيف", "الساحل والعين السخنة والغردقة"],
+  ["شغل في القاهرة؟", "روح مرتاح ووصل في معادك"],
+  ["زيارة أهلك", "في أي محافظة، لحد باب البيت"],
+  ["ميعادك مقدس", "الكابتن بيوصل قبل المعاد مش بعده"],
+  ["مفيش عداد", "ولا أي زيادة في الطريق"],
+  ["استقبال من المطار", "الكابتن مستنيك أول ما توصل"],
+  ["سفرية العيد؟", "احجز بدري قبل الزحمة"],
+  ["المصيف قرب", "احجز رحلتك للساحل من دلوقتي"],
+  ["جامعة وامتحانات؟", "مشوارك للقاهرة أو إسكندرية في معاده"],
+  ["كشف في القاهرة؟", "نوصلك براحة لحد باب العيادة"],
+  ["شركة نجم كار", "سفرك ومشاويرك في معادها"],
+  ["أي عربية تحب؟", "قولنا ونجهزهالك"],
+  ["مشوار طويل؟", "عربيات مريحة لحد الغردقة"],
+  ["رحلة شغل؟", "وصل مرتاح وجاهز لاجتماعك"],
+  ["من الباب للباب", "نستلمك من بيتك ونسلمك لحد باب مشوارك"],
+  ["كابتن محترم", "متعود على الطريق الطويل وعارف سكته"],
+  ["عربيات نضيفة", "مكيفة وجاهزة قبل كل مشوار"],
+  ["نجم كار معاك", "في كل مشوار، قريب أو بعيد"],
+  ["عربيات حديثة", "ماركات مختلفة تختار منها اللي يريحك"],
+];
+
+const CHATS = [
+  { ask: "السلام عليكم، عايز أروح المطار بكرة ٥ الصبح", route: 0, pick: "التانية", time: "٤:٣٠" },
+  { ask: "مساء الخير، عايز مشوار إسكندرية يوم الجمعة الضهر", route: 6, pick: "الأولى", time: "١٢:٠٠" },
+  { ask: "عايز أنزل الساحل أنا والعيلة السبت الصبح", route: 8, pick: "الهايس", time: "٨:٠٠" },
+];
+const BIGNUMS = [
+  { num: "12", line: "جنيه بس<br>للكيلو", small: "والهايس أغلى بـ 10% بس" },
+  { num: "300", line: "جنيه<br>تبدأ منها", small: "طنطا ← كفر الزيات، وأي مشوار تاني" },
+];
+const BOARDS = [[0, 4, 6, 3], [7, 8, 9, 5]];
+
+// Layout sequence: routes stay spread out, and no two neighbours share a layout.
+const KINDS = [
+  "ticket", "polaroid", "five", "sign", "chat", "cascade", "ticket", "rings", "full", "bignum",
+  "ticket", "quad", "polaroid", "sign", "versus", "ticket", "cascade", "board", "big-two", "rings",
+  "ticket", "full", "polaroid", "sign", "chat", "ticket", "side", "cascade", "rings", "ticket",
+  "quad", "bignum", "sign", "polaroid", "full", "ticket", "versus", "rows3", "cascade", "sign",
+  "ticket", "rings", "board", "five", "polaroid", "chat", "two-big", "full", "big-two", "ticket",
+];
+const CAR_COUNT = { quad: 4, five: 5, bignum: 4, rings: 4 };
+const THEMES = ["navy", "gold", "cream", "stripe", "sunset"];
+
+const queues = { route: 0, msg: 0, chat: 0, bignum: 0, board: 0, rings: 0 };
+const signRoutes = [4, 6, 3, 7, 9, 1];
+let signIdx = 0;
+const POSTS = KINDS.map((kind) => {
+  const p = { kind };
+  if (kind === "ticket") p.route = ROUTES[queues.route++];
+  else if (kind === "sign") p.route = ROUTES[signRoutes[signIdx++]];
+  else if (kind === "chat") p.chat = CHATS[queues.chat++];
+  else if (kind === "bignum") p.big = BIGNUMS[queues.bignum++];
+  else if (kind === "board") p.board = BOARDS[queues.board++];
+  else if (kind !== "versus") [p.title, p.sub] = MESSAGES[queues.msg++];
+  const count = kind === "rings" ? 4 + (queues.rings++ % 2) : CAR_COUNT[kind] ?? 3;
+  const must = kind === "versus" || p.chat?.pick === "الهايس" ? ["hiace"] : [];
+  p.cars = pickCars(count, must);
+  if (kind === "versus") p.cars = [...p.cars.slice(1), "hiace"];
+  return p;
+});
+
+const icon = (id) => `<svg><use href="#${id}"/></svg>`;
+const header = (p) => `<h1>${p.title}</h1><p class="sub">${p.sub}</p>`;
+
+const RENDER = {
+  ticket: ({ route: r, cars }) => `
+    <main>
+      <p class="ticket-kicker">تذكرتك جاهزة</p>
+      <div class="ticket">
+        <div class="strip">${cars.map(tagged).join("")}</div>
+        <div class="legs">
+          <div><small>من</small><b>${r.from}</b></div>${icon("car-icon")}<div><small>إلى</small><b>${r.to}</b></div>
+        </div>
+        <div class="perf"></div>
+        <div class="stubs">
+          <div><small>ملاكي</small><b><em>من</em> ${money(r.price)}</b></div>
+          <div><small>هايس</small><b><em>من</em> ${money(hiacePrice(r.price))}</b></div>
+          <div><small>المدة</small><b>${r.note}</b></div>
+        </div>
+      </div>
+    </main>`,
+  sign: ({ route: r, cars }) => `
+    <main>
+      <h1 style="font-size:96px">${r.to === "مطار القاهرة" ? "على المطار" : "على " + r.to}؟</h1>
+      <div class="sign"><div>${icon("arrow-left")}<span><small>من ${r.from}</small><b>${r.to}</b></span><span class="km">${arNum(r.km)}<small>كم</small></span></div></div>
+      <div class="chips"><span>ملاكي من <b>${money(r.price)}</b> ج</span><span>هايس من <b>${money(hiacePrice(r.price))}</b> ج</span></div>
+      <div class="cars" style="grid-template-columns:repeat(3,1fr)">${cars.map(tile).join("")}</div>
+    </main>`,
+  polaroid: (p) => `<main>${header(p)}<div class="pols">${p.cars.map((c) =>
+    `<div class="pol"><img src="../images/${c}.jpg" style="object-position:${CARS[c].focus}" alt=""><p>${CARS[c].name}</p></div>`).join("")}</div></main>`,
+  chat: ({ chat: c, cars }) => {
+    const r = ROUTES[c.route];
+    return `
+    <main>
+      <p class="chat-title">الحجز بالبساطة دي</p>
+      <div class="chat">
+        <div class="head"><img src="../images/logo.svg" alt="">شركة نجم كار</div>
+        <div class="msg me">${c.ask}</div>
+        <div class="msg us">أهلاً بيك! ${r.from} ← ${r.to} ملاكي من ${money(r.price)} ج وهايس من ${money(hiacePrice(r.price))} ج. تحب أنهي عربية؟</div>
+        <div class="msg us pics">${cars.map(tagged).join("")}</div>
+        <div class="msg me">تمام، ${c.pick} 👍</div>
+        <div class="msg us">اتأكد الحجز ✅ الكابتن عندك ${c.time}</div>
+      </div>
+    </main>`;
+  },
+  cascade: (p) => `<main>${header(p)}<div class="cascade">${p.cars.map(tile).join("")}</div></main>`,
+  rings: (p) => `<main>${header(p)}<div class="rings${p.cars.length === 4 ? " four" : ""}">${p.cars.map((c) => `<div class="ring${p.cars.length > 4 ? " sm" : ""}">${photo(c)}</div>`).join("")}</div>
+    <div class="caption-row">${p.cars.map((c) => `<span>${CARS[c].name}</span>`).join("")}</div></main>`,
+  bignum: ({ big: b, cars }) => `
+    <main>
+      <div class="bignum"><strong>${b.num}</strong><p>${b.line}<small>${b.small}</small></p></div>
+      <div class="cars quad" style="flex:1.3">${cars.map(tile).join("")}</div>
+    </main>`,
+  board: ({ board, cars }) => `
+    <main>
+      <h1 style="font-size:100px">رحلات النهارده</h1>
+      <div class="board"><div class="bar"><span>الوجهة</span><span>ملاكي من</span></div>
+        ${board.map((i) => ROUTES[i]).map((r) => `<div class="row"><span>${r.from} ← ${r.to}</span><strong>${money(r.price)} <em>ج</em></strong></div>`).join("")}
+      </div>
+      <div class="rings">${cars.map((c) => `<div class="ring sm">${photo(c)}</div>`).join("")}</div>
+    </main>`,
+  versus: ({ cars }) => `
+    <main>
+      <h1 style="font-size:104px">ملاكي ولا هايس؟</h1>
+      <div class="versus">
+        <section><h2>ملاكي</h2><p>لحد ٤ ركاب، الكيلو بـ 12 ج</p>${tile(cars[0])}${tile(cars[1])}</section>
+        <section><h2>هايس</h2><p>للعيلة والمجموعات، +10% بس</p>${tile(cars[2])}</section>
+        <div class="vs">ولا</div>
+      </div>
+    </main>`,
+  full: (p) => `<main>${header(p)}<div class="insets">${p.cars.slice(1).map(tile).join("")}</div></main>`,
+};
+for (const k of ["big-two", "two-big", "rows3", "side", "quad", "five"]) {
+  RENDER[k] = (p) => `<main>${header(p)}<div class="cars ${k}">${p.cars.map(tile).join("")}</div></main>`;
+}
+
+const n = Number(new URLSearchParams(location.search).get("n") ?? 1);
+const post = POSTS[n - 1];
+document.body.className = post.kind === "full" ? "full navy" : THEMES[(n - 1) % THEMES.length];
+document.body.insertAdjacentHTML("beforeend", `
+  ${post.kind === "full" ? `<div class="bg">${photo(post.cars[0])}</div>` : ""}
+  <header class="brand"><img src="../images/logo.svg" alt=""><b>شركة نجم كار</b></header>
+  ${RENDER[post.kind](post)}
+  <div class="cta"><span class="lbl">${icon("wa")}احجز على واتساب</span><span class="num">${PHONE}</span></div>
+  <p class="link">الأسعار والحجز: <b>${SITE}</b></p>`);
+</script>
+</body>
+</html>

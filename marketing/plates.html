@@ -39,13 +39,23 @@ html, body { overflow: hidden; background: #000; }
   </div>
 </div>
 <script>
-// Corners of the existing plate in each 960px photo: top-left, top-right, bottom-right, bottom-left.
+// Corners of the existing plate (or plate mount) in each photo, in the photo’s own pixels: top-left, top-right, bottom-right, bottom-left.
 const CARS = {
   elantra: { quad: [[515, 403], [654, 395], [657, 444], [517, 454]], digits: "١" },
   corolla: { quad: [[475, 372], [615, 364], [618, 412], [477, 420]], digits: "١" },
   sunny:   { quad: [[567, 415], [708, 410], [710, 458], [569, 463]], digits: "١" },
   hiace:   { quad: [[606, 409], [680, 404], [682, 432], [608, 438]], digits: "١" },
   cerato:  { quad: [[829, 381], [925, 329], [932, 388], [831, 440]], digits: "١" },
+  accent:   { quad: [[910, 545], [1060, 531], [1062, 586], [912, 600]], digits: "١" },
+  optra:    { quad: [[1122, 392], [1196, 391], [1197, 446], [1123, 448]], digits: "١" },
+  sportage: { quad: [[44, 510], [184, 537], [184, 594], [44, 563]], digits: "١" },
+  fortuner: { quad: [[1020, 539], [1160, 522], [1162, 574], [1022, 591]], digits: "١" },
+  lancer:   { quad: [[943, 552], [1049, 523], [1053, 586], [948, 621]], digits: "١" },
+  octavia:  { quad: [[1000, 681], [1171, 591], [1160, 638], [992, 738]], digits: "١" },
+  tucson:   { quad: [[124, 459], [268, 465], [267, 512], [124, 505]], digits: "١" },
+  sentra:   { quad: [[206, 434], [312, 440], [310, 500], [208, 494]], digits: "١" },
+  mgzs:     { quad: [[123, 613], [245, 675], [253, 752], [133, 672]], digits: "١" },
+  peugeot:  { quad: [[113, 489], [223, 489], [223, 543], [114, 539]], digits: "١" },
 };
 
 const solve = (A, b) => {
