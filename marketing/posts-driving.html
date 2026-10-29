@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>بوستات تعليم السواقة - شركة نجم كار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@500;700&display=block">
+<style>
+:root {
+  --navy: #121838; --gold: #F4C247; --wa: #1FA855; --red: #D7263D;
+  --display: "Lalezar", "IBM Plex Sans Arabic", sans-serif; --body: "IBM Plex Sans Arabic", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body { font-family: var(--body); color: #F4F1E8; background: radial-gradient(90% 55% at 50% 0%, #23307A, #0F1433 72%); padding: 40px 48px 34px; display: flex; flex-direction: column; gap: 22px; }
+body.gold { background: linear-gradient(170deg, #FFD566, #F4C247 55%, #E9AE2A); color: var(--navy); }
+body.cream { background: #FFF8E6; color: var(--navy); }
+.ph { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.brand { align-self: center; display: flex; align-items: center; gap: 14px; background: var(--navy); color: var(--gold); padding: 10px 30px 10px 34px; border-radius: 999px; box-shadow: 0 8px 22px rgba(0,0,0,.25); }
+.brand img { height: 58px; width: auto; }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 44px; line-height: 1; }
+main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 20px; position: relative; }
+h1 { font-family: var(--display); font-weight: 400; line-height: 1.02; text-align: center; }
+.sub { text-align: center; font-size: 38px; font-weight: 700; line-height: 1.35; }
+
+/* learner badge, like the "تعليم" sign on a training car's roof */
+.learner { display: inline-grid; place-items: center; background: #fff; color: var(--red); border: 10px solid var(--red); border-radius: 22px; font-family: var(--display); line-height: 1; box-shadow: 0 12px 28px rgba(0,0,0,.35); }
+
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--wa); color: #fff; border-radius: 26px; padding: 16px 30px; box-shadow: 0 8px 22px rgba(0,0,0,.2); }
+.cta .lbl { display: flex; align-items: center; gap: 14px; font-size: 40px; font-weight: 700; }
+.cta svg { width: 52px; height: 52px; }
+.cta .num { direction: ltr; font-family: var(--display); font-weight: 400; font-size: 62px; line-height: 1; }
+.link { text-align: center; font-size: 26px; font-weight: 700; margin-top: -10px; opacity: .9; }
+.link b { direction: ltr; unicode-bidi: isolate; }
+
+/* 1: fear hook */
+.p1 h1 { font-size: 150px; color: var(--gold); }
+.p1 .hero { flex: 1; min-height: 0; position: relative; border-radius: 30px; overflow: hidden; border: 5px solid var(--gold); }
+.p1 .hero .learner { position: absolute; top: 24px; left: 24px; width: 230px; height: 120px; font-size: 76px; transform: rotate(-6deg); }
+.p1 .points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.p1 .points span { font-size: 31px; font-weight: 700; padding: 12px 18px; border-radius: 18px; background: rgba(244,241,232,.08); border: 2px solid rgba(244,241,232,.22); }
+.p1 .points span::before { content: "✓ "; color: var(--gold); }
+
+/* 2: road of steps */
+.p2 .top { display: flex; align-items: center; justify-content: center; gap: 28px; }
+.p2 .learner { width: 170px; height: 170px; font-size: 120px; border-radius: 28px; }
+.p2 h1 { font-size: 112px; text-align: start; }
+.road { flex: 1; min-height: 0; position: relative; background: #2A2F3E; border-radius: 34px; padding: 26px 36px; display: grid; gap: 14px; align-content: space-evenly;
+  background-image: repeating-linear-gradient(180deg, #F4C247 0 46px, transparent 46px 86px); background-size: 10px 100%; background-repeat: no-repeat; background-position: 50% 0; box-shadow: inset 0 0 0 10px #3B4152; }
+.step { position: relative; z-index: 1; display: flex; align-items: center; gap: 20px; width: 62%; background: #fff; color: var(--navy); border-radius: 24px; padding: 14px 22px; box-shadow: 0 10px 22px rgba(0,0,0,.3); }
+.step:nth-child(even) { margin-inline-start: auto; }
+.step b { flex: none; width: 76px; height: 76px; border-radius: 50%; background: var(--navy); color: var(--gold); display: grid; place-items: center; font-family: var(--display); font-weight: 400; font-size: 48px; }
+.step span { font-size: 34px; font-weight: 700; line-height: 1.25; }
+.step small { display: block; font-size: 25px; font-weight: 500; opacity: .75; }
+.p2 .sub { font-size: 34px; }
+
+/* 3: automatic vs manual */
+.p3 h1 { font-size: 116px; }
+.p3 h1 em { font-style: normal; color: #B9800F; }
+.gears { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
+.gear { display: flex; flex-direction: column; gap: 12px; background: #fff; border: 3px solid rgba(18,24,56,.15); border-radius: 30px; padding: 16px; box-shadow: 0 12px 28px rgba(18,24,56,.12); }
+.gear .pic { flex: 1; min-height: 0; border-radius: 22px; overflow: hidden; }
+.gear h2 { font-family: var(--display); font-weight: 400; font-size: 70px; text-align: center; line-height: 1; }
+.gear p { text-align: center; font-size: 29px; font-weight: 700; color: #4A5070; }
+.gear svg.knob { width: 120px; height: 120px; align-self: center; color: var(--navy); }
+.gears .and { position: absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font-family: var(--display); font-size: 70px; border: 6px solid var(--navy); z-index: 2; }
+.p3 .chips { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.p3 .chips span { font-size: 30px; font-weight: 700; padding: 10px 22px; border-radius: 999px; background: var(--navy); color: var(--gold); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="auto" viewBox="0 0 100 100"><rect x="30" y="8" width="40" height="84" rx="12" fill="none" stroke="currentColor" stroke-width="6"/><g font-family="Arial" font-weight="700" font-size="16" fill="currentColor" text-anchor="middle"><text x="50" y="30">P</text><text x="50" y="48">R</text><text x="50" y="66">N</text><text x="50" y="84">D</text></g></symbol>
+  <symbol id="manual" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M20 15v70M50 15v70M80 15v70M20 50h60"/></g><g font-family="Arial" font-weight="700" font-size="14" fill="currentColor" text-anchor="middle"><text x="10" y="18">1</text><text x="10" y="92">2</text><text x="40" y="18">3</text><text x="40" y="92">4</text><text x="90" y="18">5</text><text x="90" y="92">R</text></g></symbol>
+</svg>
+<script>
+const PHONE = "01043950220";
+const SITE = "nagmcars.github.io/travels";
+const photo = (c, focus = "center 62%") => `<img class="ph" src="../images/${c}.jpg" style="object-position:${focus}" alt="">`;
+
+const POSTS = [
+  { theme: "", html: `
+    <main class="p1">
+      <h1>خايف تسوق؟</h1>
+      <p class="sub">هنعلمك خطوة بخطوة، لحد ما تسوق لوحدك وانت واثق</p>
+      <div class="hero">${photo("sentra", "40% 58%")}<span class="learner">تعليم</span></div>
+      <div class="points"><span>كابتن صبور ومحترم</span><span>من الصفر خالص</span><span>أوتوماتيك ومانيوال</span><span>الكابتن يعدّي عليك</span></div>
+    </main>` },
+  { theme: "gold", html: `
+    <main class="p2">
+      <div class="top"><span class="learner">ل</span><h1>من الصفر<br>لحد الطريق</h1></div>
+      <div class="road">
+        <div class="step"><b>١</b><span>الأساسيات<small>الدركسيون والفرامل والمرايات</small></span></div>
+        <div class="step"><b>٢</b><span>الركن<small>جنب الرصيف وبين عربيتين</small></span></div>
+        <div class="step"><b>٣</b><span>الزحمة والطلوع<small>جوه المدينة ووقت الذروة</small></span></div>
+        <div class="step"><b>٤</b><span>الطريق السريع<small>وتسوق لوحدك وانت مطمن</small></span></div>
+      </div>
+      <p class="sub">مواعيد تناسبك، الصبح أو بالليل</p>
+    </main>` },
+  { theme: "cream", html: `
+    <main class="p3">
+      <h1>أوتوماتيك ولا <em>مانيوال</em>؟</h1>
+      <p class="sub">الاتنين عندنا، اختار اللي يريحك</p>
+      <div class="gears">
+        <div class="gear"><svg class="knob"><use href="#auto"/></svg><h2>أوتوماتيك</h2><p>أسهل وأسرع في التعلم</p><div class="pic">${photo("elantra")}</div></div>
+        <div class="gear"><svg class="knob"><use href="#manual"/></svg><h2>مانيوال</h2><p>تتحكم في أي عربية</p><div class="pic">${photo("accent", "62% 55%")}</div></div>
+        <span class="and">و</span>
+      </div>
+      <div class="chips"><span>تعليم سواقة</span><span>من الصفر</span><span>مواعيد مرنة</span><span>الكابتن يعدّي عليك</span></div>
+    </main>` },
+];
+
+const n = Number(new URLSearchParams(location.search).get("n") ?? 1);
+const post = POSTS[n - 1];
+document.body.className = post.theme;
+document.body.insertAdjacentHTML("beforeend", `
+  <header class="brand"><img src="../images/logo.svg" alt=""><b>شركة نجم كار</b></header>
+  ${post.html}
+  <div class="cta"><span class="lbl"><svg><use href="#wa"/></svg>احجز حصتك على واتساب</span><span class="num">${PHONE}</span></div>
+  <p class="link">التفاصيل والحجز: <b>${SITE}</b></p>`);
+</script>
+</body>
+</html>
