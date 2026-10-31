@@ -167,7 +167,8 @@ section.block { padding-block: 72px; }
 .route .arrow { color: var(--gold-ink); }
 .route small { width: 100%; font-weight: 400; color: var(--muted); font-size: .88rem; }
 .price { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.15rem; white-space: nowrap; }
-.price small { font-weight: 400; color: var(--muted); font-size: .85rem; }
+.price small { display: block; font-weight: 400; color: var(--muted); font-size: .85rem; }
+.price.none a { color: var(--wa); font-size: .95rem; text-decoration: underline; text-underline-offset: 3px; }
 .price .lbl { display: none; }
 .fares-note { color: var(--muted); font-size: .92rem; margin-top: 14px; }
 
@@ -528,7 +529,7 @@ a.menu-btn svg { width: 20px; height: 20px; }
         <article class="service">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19L10 5h4l6 14"/><path d="M12 8v2M12 13v2"/></svg>
           <h3>سفر للمحافظات</h3>
-          <p>القاهرة وإسكندرية والمنصورة والساحل والسخنة والغردقة.</p>
+          <p>القاهرة وإسكندرية والمنصورة والساحل والسخنة وشرم الشيخ.</p>
         </article>
         <article class="service">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
@@ -609,13 +610,13 @@ a.menu-btn svg { width: 20px; height: 20px; }
       <div class="fares" role="table" aria-label="أسعار المشاوير">
         <div class="fare-row head" role="row">
           <span role="columnheader">المشوار</span>
-          <span role="columnheader">ملاكي (٤ ركاب)</span>
-          <span role="columnheader">هايس (١٢ راكب)</span>
+          <span role="columnheader">ذهاب</span>
+          <span role="columnheader">ذهاب وعودة</span>
           <span role="columnheader"><span class="sr" style="opacity:0">احجز</span></span>
         </div>
         <div id="fare-rows"></div>
       </div>
-      <p class="fares-note">الأسعار بالجنيه المصري وشاملة البنزين والكارتة. الملاكي بـ <span class="rate-text"></span> جنيه للكيلو والهايس أغلى بـ ١٠٪. انتظار أكتر من ساعة بيتحسب لوحده. مشوارك مش في القائمة؟ <a href="#custom">اطلب سعر مشوار مخصوص</a>.</p>
+      <p class="fares-note">الأسعار بالجنيه المصري للعربية الملاكي (٤ ركاب) وشاملة البنزين والكارتة، والهايس (١٢ راكب) أغلى بـ ١٠٪. انتظار أكتر من ساعة بيتحسب لوحده. مشوارك مش في القائمة؟ بـ <span class="rate-text"></span> جنيه للكيلو، <a href="#custom">اطلب سعره</a>.</p>
     </div>
   </section>
 
@@ -665,7 +666,7 @@ a.menu-btn svg { width: 20px; height: 20px; }
           <option value="شبين الكوم"></option>
           <option value="الساحل الشمالي"></option>
           <option value="العين السخنة"></option>
-          <option value="الغردقة"></option>
+          <option value="شرم الشيخ"></option>
         </datalist>
       </div>
     </div>
@@ -772,38 +773,44 @@ a.menu-btn svg { width: 20px; height: 20px; }
 // Edit these two lists to change the WhatsApp number and the fares.
 const WHATSAPP_NUMBER = "201043950220"; // international format, no + or spaces
 const PHONE_NUMBER = "201043950220";
-// One-way sedan price = km × RATE_PER_KM unless a route sets its own fixed price. Hiace is 10% above the sedan.
+// Sedan prices. A route without fixed prices is one way at km × RATE_PER_KM. Hiace is 10% above the sedan.
 const RATE_PER_KM = 12;
 const ORIGIN = "طنطا";
 const FARES = [
-  { to: "مطار القاهرة", km: 150, note: "ساعتين. توصيل أو استقبال لحد باب البيت" },
-  { to: "كفر الزيات", km: 25, note: "تلت ساعة" },
-  { to: "المحلة الكبرى", km: 40, note: "نص ساعة" },
-  { to: "المنصورة", km: 90, note: "ساعة" },
+  { to: "مطار القاهرة", km: 150, oneWay: 1500, note: "ساعتين. توصيل أو استقبال لحد باب البيت" },
+  { from: "كفر الزيات", to: "مطار القاهرة", km: 160, oneWay: 1700, note: "ساعتين" },
+  { from: "كفر الزيات", to: "طنطا", km: 25, oneWay: 230, roundTrip: 400, note: "تلت ساعة" },
+  { to: "المحلة الكبرى", km: 40, oneWay: 300, roundTrip: 600, note: "نص ساعة" },
+  { to: "المنصورة", km: 90, oneWay: 900, roundTrip: 1200, note: "ساعة" },
+  { from: "كفر الزيات", to: "القاهرة", km: 130, roundTrip: 1600, note: "ساعة ونص" },
+  { from: "كفر الزيات", to: "الإسكندرية", km: 120, oneWay: 1000, roundTrip: 1500, note: "ساعة ونص" },
+  { to: "العين السخنة", km: 280, roundTrip: 3000, note: "٣ ساعات ونص" },
+  { to: "شرم الشيخ", km: 550, oneWay: 6600, note: "٧ ساعات" },
   { to: "القاهرة", km: 120, note: "ساعة ونص" },
-  { from: "كفر الزيات", to: "القاهرة", km: 130, note: "ساعة ونص" },
   { to: "الإسكندرية", km: 150, note: "ساعتين" },
-  { to: "العين السخنة", km: 280, note: "٣ ساعات ونص" },
   { to: "الساحل الشمالي", km: 290, note: "لحد العلمين الجديدة، ٣ ساعات ونص" },
-  { to: "الغردقة", km: 695, note: "٧ ساعات" },
-].map((f) => ({ ...f, car: f.price ?? f.km * RATE_PER_KM }));
+].map((f) => (f.oneWay || f.roundTrip ? f : { ...f, oneWay: f.km * RATE_PER_KM }));
 
 const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const hiacePrice = (car) => Math.round((car * 1.1) / 10) * 10;
 const money = (n) => n.toLocaleString("en-US");
+const priceCell = (label, price, route) => price
+  ? `<div class="price" role="cell"><span class="lbl">${label}</span>${money(price)} <small>ج.م · هايس ${money(hiacePrice(price))}</small></div>`
+  : `<div class="price none" role="cell"><span class="lbl">${label}</span><a target="_blank" rel="noopener" href="${esc(waLink(`أهلاً نجم كار، عايز أعرف سعر ${label}: ${route}`))}">اسأل على واتساب</a></div>`;
 
 document.getElementById("fare-rows").innerHTML = FARES.map((f) => {
   const from = f.from ?? ORIGIN;
-  const booking = `أهلاً نجم كار، عايز أحجز مشوار: ${from} ← ${f.to}`;
+  const route = `${from} ← ${f.to}`;
+  const booking = `أهلاً نجم كار، عايز أحجز مشوار: ${route}`;
   return `
   <div class="fare-row" role="row">
     <div class="route" role="cell">
       <span>${esc(from)}</span><span class="arrow">←</span><span>${esc(f.to)}</span>
       <small>حوالي ${f.km.toLocaleString("ar-EG")} كم، ${esc(f.note)}</small>
     </div>
-    <div class="price" role="cell"><span class="lbl">ملاكي</span><small>من</small> ${money(f.car)} <small>ج.م</small></div>
-    <div class="price" role="cell"><span class="lbl">هايس</span><small>من</small> ${money(hiacePrice(f.car))} <small>ج.م</small></div>
+    ${priceCell("ذهاب", f.oneWay, route)}
+    ${priceCell("ذهاب وعودة", f.roundTrip, route)}
     <a class="btn-wa sm" role="cell" target="_blank" rel="noopener" href="${esc(waLink(booking))}">
       <svg aria-hidden="true"><use href="#i-wa"/></svg>احجز
     </a>

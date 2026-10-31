@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>بوستات أسعار المشاوير - شركة نجم كار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@500;700&display=block">
+<style>
+:root {
+  --navy: #121838; --gold: #F4C247; --wa: #1FA855; --red: #D7263D; --ink: #8A6A1F;
+  --display: "Lalezar", "IBM Plex Sans Arabic", sans-serif; --body: "IBM Plex Sans Arabic", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body { font-family: var(--body); color: #F4F1E8; background: radial-gradient(90% 55% at 50% 0%, #23307A, #0F1433 72%); padding: 40px 48px 34px; display: flex; flex-direction: column; gap: 22px; }
+body.gold { background: linear-gradient(170deg, #FFD566, #F4C247 55%, #E9AE2A); color: var(--navy); }
+body.cream { background: #FFF8E6; color: var(--navy); }
+body.sky { background: linear-gradient(180deg, #8FD3F4, #D9F1FB 70%); color: var(--navy); }
+body.sea { background: linear-gradient(180deg, #0E5C8C, #1688B8 60%, #3BB0D6); }
+body.sunset { background: linear-gradient(180deg, #FF8A3D, #FFB347 45%, #FFE0A3); color: var(--navy); }
+.ph { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile { position: relative; border-radius: 24px; overflow: hidden; border: 4px solid var(--gold); min-height: 0; }
+.tile small { position: absolute; bottom: 10px; right: 10px; background: rgba(18,24,56,.85); color: #fff; font-size: 22px; font-weight: 700; padding: 4px 14px; border-radius: 999px; }
+.row4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+.brand { align-self: center; display: flex; align-items: center; gap: 14px; background: var(--navy); color: var(--gold); padding: 10px 30px 10px 34px; border-radius: 999px; box-shadow: 0 8px 22px rgba(0,0,0,.25); }
+.brand img { height: 58px; width: auto; }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 44px; line-height: 1; }
+main { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 20px; position: relative; }
+h1 { font-family: var(--display); font-weight: 400; line-height: 1.02; text-align: center; }
+h1 em { font-style: normal; color: var(--gold); }
+.sub { text-align: center; font-size: 36px; font-weight: 700; line-height: 1.35; }
+.fine { text-align: center; font-size: 26px; font-weight: 700; opacity: .8; }
+.num { font-family: var(--display); font-weight: 400; direction: ltr; unicode-bidi: isolate; line-height: 1; }
+
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--wa); color: #fff; border-radius: 26px; padding: 16px 30px; box-shadow: 0 8px 22px rgba(0,0,0,.2); }
+.cta .lbl { display: flex; align-items: center; gap: 14px; font-size: 40px; font-weight: 700; }
+.cta svg { width: 52px; height: 52px; }
+.cta .num { font-size: 62px; }
+.link { text-align: center; font-size: 26px; font-weight: 700; margin-top: -10px; opacity: .9; }
+.link b { direction: ltr; unicode-bidi: isolate; }
+
+/* 1: boarding pass */
+.p1 h1 { font-size: 128px; }
+.pass { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr auto; background: #FFFDF6; color: var(--navy); border-radius: 34px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+.pass .main { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; min-height: 0; }
+.pass .top { background: var(--gold); padding: 14px 30px; display: flex; justify-content: space-between; align-items: center; font-size: 30px; font-weight: 700; }
+.pass .top svg { width: 46px; height: 46px; }
+.pass .cars { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; min-height: 0; }
+.pass .cars .tile { border-width: 0; border-radius: 16px; }
+.pass .od { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 8px 30px 20px; text-align: center; }
+.pass .od small { display: block; font-size: 24px; font-weight: 700; color: var(--ink); }
+.pass .od b { font-family: var(--display); font-weight: 400; font-size: 58px; line-height: 1.1; }
+.pass .od svg { width: 70px; height: 70px; color: var(--ink); }
+.pass .stub { width: 300px; border-inline-start: 6px dashed #D9CFB4; padding: 30px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px; text-align: center; background: #FFF6DA; }
+.pass .stub small { font-size: 28px; font-weight: 700; color: var(--ink); }
+.pass .stub .num { font-size: 104px; }
+.pass .stub p { font-size: 28px; font-weight: 700; }
+.pass .stub .bar { width: 190px; height: 90px; background: repeating-linear-gradient(90deg, var(--navy) 0 4px, transparent 4px 7px, var(--navy) 7px 9px, transparent 9px 14px); }
+
+/* 2: airport road sign */
+.p2 h1 { font-size: 104px; }
+.asign { background: #1D4F9C; border-radius: 30px; padding: 12px; box-shadow: 0 16px 36px rgba(0,0,0,.3); }
+.asign > div { border: 6px solid #fff; border-radius: 22px; padding: 22px 34px; display: grid; grid-template-columns: auto 1fr auto; gap: 30px; align-items: center; color: #fff; }
+.asign svg { width: 150px; height: 150px; }
+.asign h2 { font-family: var(--display); font-weight: 400; font-size: 92px; line-height: 1; }
+.asign p { font-size: 34px; font-weight: 700; margin-top: 6px; }
+.asign .km { text-align: center; font-family: var(--display); font-size: 80px; line-height: 1; }
+.asign .km small { display: block; font-size: 34px; }
+.pole { display: flex; justify-content: center; gap: 260px; height: 30px; margin-top: -20px; }
+.pole i { width: 26px; background: linear-gradient(90deg, #8C96A8, #C9D0DB, #8C96A8); }
+.p2 .plaque { align-self: center; margin-top: -20px; background: var(--navy); color: var(--gold); border-radius: 26px; padding: 14px 54px; display: flex; align-items: baseline; gap: 22px; box-shadow: 0 12px 28px rgba(0,0,0,.3); }
+.p2 .plaque .num { font-size: 130px; }
+.p2 .plaque span { font-size: 40px; font-weight: 700; color: #fff; }
+.p2 .row4 { flex: 1; min-height: 0; grid-template: 1fr 1fr / 1fr 1fr; }
+.p2 .tile { border-color: #fff; }
+
+/* 3: metro line between two stations */
+.p3 h1 { font-size: 120px; }
+.line { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; height: 220px; }
+.line::before { content: ""; position: absolute; top: 50%; left: 120px; right: 120px; height: 26px; margin-top: -13px; background: repeating-linear-gradient(90deg, var(--red) 0 60px, #F07A88 60px 70px); border-radius: 13px; }
+.station { position: relative; z-index: 1; width: 200px; height: 200px; border-radius: 50%; background: #fff; border: 16px solid var(--red); display: grid; place-items: center; text-align: center; font-family: var(--display); font-size: 44px; line-height: 1.1; box-shadow: 0 10px 24px rgba(0,0,0,.15); }
+.line .mid { position: relative; z-index: 1; background: var(--navy); color: var(--gold); border-radius: 999px; padding: 10px 30px; font-size: 32px; font-weight: 700; }
+.fares2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.fares2 div { background: #fff; border: 4px solid var(--navy); border-radius: 30px; padding: 16px; text-align: center; box-shadow: 0 10px 24px rgba(18,24,56,.12); }
+.fares2 div:last-child { background: var(--navy); color: var(--gold); }
+.fares2 span { display: block; font-size: 36px; font-weight: 700; }
+.fares2 .num { font-size: 130px; }
+.fares2 small { font-size: 30px; font-weight: 700; }
+.p3 .row3 { flex: 1; min-height: 0; }
+.p3 .tile { border-color: var(--navy); }
+
+/* 4: receipt */
+.p4 h1 { font-size: 118px; }
+.p4 .split { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: minmax(0, 1fr); gap: 20px; }
+.receipt { background: #FFFDF6; color: #222; padding: 40px 36px 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; font-size: 42px; font-weight: 700; box-shadow: 0 18px 40px rgba(0,0,0,.4); transform: rotate(-1.5deg);
+  -webkit-mask: radial-gradient(14px at 50% 100%, #0000 98%, #000) 50% 100% / 34px 100% repeat-x; }
+.receipt h3 { font-family: var(--display); font-weight: 400; font-size: 76px; text-align: center; color: var(--navy); line-height: 1.1; }
+.receipt .meta { text-align: center; font-size: 28px; color: #777; border-bottom: 4px dashed #CCC; padding-bottom: 12px; }
+.receipt .ln { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.receipt .ln .num { font-size: 100px; color: var(--navy); }
+.receipt .ln em { font-style: normal; color: var(--wa); }
+.receipt .tot { border-top: 4px dashed #CCC; padding-top: 14px; text-align: center; font-size: 32px; color: #555; }
+.p4 .stack { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 12px; min-height: 0; }
+
+/* 5: one way vs round trip */
+.p5 h1 { font-size: 136px; }
+.duo { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.duo > div { border-radius: 34px; padding: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; }
+.duo > div:first-child { background: #fff; }
+.duo > div:last-child { background: var(--navy); color: var(--gold); }
+.duo svg { width: 120px; height: 120px; }
+.duo span { font-size: 44px; font-weight: 700; }
+.duo .num { font-size: 190px; }
+.duo small { font-size: 34px; font-weight: 700; }
+.save { align-self: center; background: var(--red); color: #fff; font-family: var(--display); font-size: 60px; padding: 8px 46px; border-radius: 999px; transform: rotate(-2deg); margin: -50px 0 -10px; z-index: 1; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+.p5 .row4 { height: 250px; }
+.p5 .tile { border-color: var(--navy); }
+
+/* 6: a day in Cairo */
+.p6 h1 { font-size: 112px; }
+.p6 h1 em { color: #B9800F; }
+.p6 .split { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr); gap: 22px; }
+.tl { display: flex; flex-direction: column; justify-content: space-between; position: relative; padding: 6px 0; }
+.tl::before { content: ""; position: absolute; top: 40px; bottom: 120px; right: 46px; width: 8px; background: var(--navy); border-radius: 4px; }
+.tl .st { position: relative; display: flex; align-items: center; gap: 18px; }
+.tl .st b { flex: none; width: 100px; height: 100px; border-radius: 50%; background: var(--gold); border: 6px solid var(--navy); display: grid; place-items: center; font-family: var(--display); font-weight: 400; font-size: 34px; }
+.tl .st span { font-size: 36px; font-weight: 700; line-height: 1.25; }
+.tl .st small { display: block; font-size: 26px; opacity: .7; }
+.tl .price { background: var(--navy); color: var(--gold); border-radius: 30px; padding: 16px; text-align: center; }
+.tl .price .num { font-size: 120px; }
+.tl .price small { display: block; font-size: 32px; font-weight: 700; color: #fff; margin-top: 4px; }
+.p6 .grid { display: grid; grid-template: 1fr 1fr / 1fr 1fr; gap: 12px; min-height: 0; }
+.p6 .tile { border-color: var(--navy); }
+
+/* 7: postcard from Alexandria */
+.p7 h1 { font-size: 112px; }
+.card { flex: 1; min-height: 0; background: #FFFDF6; color: var(--navy); border-radius: 18px; padding: 22px; display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: minmax(0, 1fr); gap: 22px; transform: rotate(1.5deg); box-shadow: 0 22px 44px rgba(0,0,0,.4); }
+.card .pics { display: grid; grid-template: 1fr 1fr / 1fr 1fr; gap: 8px; min-height: 0; }
+.card .pics .tile { border-width: 0; border-radius: 10px; }
+.card .back { position: relative; border-inline-start: 4px solid #D9CFB4; padding-inline-start: 22px; display: flex; flex-direction: column; gap: 14px; }
+.card .greet { font-family: var(--display); font-size: 64px; line-height: 1.05; color: #0E5C8C; margin-top: 226px; }
+.card .addr { border-bottom: 3px solid #D9CFB4; font-size: 32px; font-weight: 700; padding-bottom: 6px; }
+.card .addr small { color: var(--ink); font-size: 26px; }
+.stamp { position: absolute; top: 0; left: 0; width: 200px; height: 210px; background: #0E5C8C; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; outline: 8px dotted #FFFDF6; outline-offset: -4px; border: 8px solid #FFFDF6; box-shadow: 0 0 0 3px #0E5C8C; }
+.stamp .num { font-size: 60px; color: var(--gold); }
+.stamp small { font-size: 24px; font-weight: 700; }
+.postmark { margin-top: auto; align-self: center; width: 250px; height: 250px; border-radius: 50%; border: 8px double var(--red); color: var(--red); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transform: rotate(-12deg); }
+.postmark .num { font-size: 92px; }
+.postmark small { font-size: 26px; font-weight: 700; }
+.p7 .sub { margin-top: 6px; }
+
+/* 8: Sokhna sun */
+.p8 h1 { font-size: 124px; }
+.sunwrap { position: relative; display: grid; place-items: center; height: 400px; }
+.sunwrap::before { content: ""; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: repeating-conic-gradient(rgba(255,255,255,.55) 0 8deg, transparent 8deg 22deg); -webkit-mask: radial-gradient(circle, transparent 54%, #000 55%); }
+.sun { position: relative; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFF3B0, #FFD233 60%, #F5A300); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 60px rgba(255,210,51,.8); }
+.sun .num { font-size: 120px; }
+.sun small { font-size: 32px; font-weight: 700; }
+.waves { height: 40px; margin: -10px 0 -6px; background: radial-gradient(30px 22px at 30px 0, transparent 96%, #1688B8) 0 0 / 60px 40px repeat-x; }
+.p8 .row4 { flex: 1; min-height: 0; }
+.p8 .tile { border-color: #fff; }
+.p8 .chips { display: flex; justify-content: center; gap: 12px; }
+.p8 .chips span { font-size: 30px; font-weight: 700; padding: 8px 22px; border-radius: 999px; background: var(--navy); color: var(--gold); }
+
+/* 9: road-trip map to Sharm */
+.p9 h1 { font-size: 112px; }
+.map { position: relative; flex: 1; min-height: 0; background: #F2E6C9; border-radius: 34px; overflow: hidden; box-shadow: inset 0 0 0 10px #E2D2AA; }
+.map svg.route { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pinm { position: absolute; transform: translate(calc(-100% + 17px), -50%); display: flex; align-items: center; gap: 10px; color: var(--navy); font-size: 32px; font-weight: 700; white-space: nowrap; }
+.pinm i { width: 34px; height: 34px; border-radius: 50%; background: var(--red); border: 7px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,.3); }
+.pinm.big { font-family: var(--display); font-weight: 400; font-size: 56px; }
+.pinm.big i { width: 50px; height: 50px; background: var(--navy); }
+.pinm.big { transform: translate(calc(-100% + 25px), -50%); }
+.map .pricebox { position: absolute; right: 30px; bottom: 30px; background: var(--navy); color: var(--gold); border-radius: 28px; padding: 16px 30px; text-align: center; box-shadow: 0 12px 26px rgba(0,0,0,.3); }
+.map .pricebox .num { font-size: 130px; }
+.map .pricebox small { display: block; font-size: 30px; font-weight: 700; color: #fff; }
+.p9 .row4 { height: 230px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.450 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.690-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M10.6 4.6 3.2 12l7.4 7.4 1.8-1.8L8.1 13.3H21v-2.6H8.1l4.3-4.3z"/></symbol>
+  <symbol id="swap" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4 2 9l5 5v-3.5h9v-3H7zm10 6v3.5H8v3h9V20l5-5z"/></symbol>
+</svg>
+<script>
+const PHONE = "01043950220";
+const SITE = "nagmcars.github.io/travels";
+const FOCUS = { elantra: "center 62%", octavia: "62% 62%", sunny: "center 62%", fortuner: "62% 55%", cerato: "72% 60%", peugeot: "30% 60%", lancer: "55% 60%", corolla: "center 62%", mgzs: "30% 60%", accent: "62% 55%", sentra: "40% 58%", optra: "68% 50%", camry: "60% 55%", sportage: "30% 60%", tucson: "35% 58%", hiace: "center 62%" };
+const tile = (c, label = "") => `<div class="tile"><img class="ph" src="../images/${c}.jpg" style="object-position:${FOCUS[c]}" alt="">${label && `<small>${label}</small>`}</div>`;
+const tiles = (cars) => cars.map((c) => tile(c)).join("");
+const money = (n) => n.toLocaleString("en-US");
+const hiace = (n) => money(Math.round((n * 1.1) / 10) * 10);
+const ico = (id) => `<svg><use href="#${id}"/></svg>`;
+
+const POSTS = [
+  { theme: "", html: `
+    <main class="p1">
+      <h1>طيارتك <em>بدري؟</em></h1>
+      <p class="sub">نوصلك مطار القاهرة من باب البيت، في معادك بالظبط</p>
+      <div class="pass">
+        <div class="main">
+          <div class="top"><span>بطاقة صعود · نجم كار</span>${ico("plane")}</div>
+          <div class="cars">${tiles(["elantra", "camry", "sportage", "octavia"])}</div>
+          <div class="od"><div><small>من</small><b>طنطا</b></div>${ico("arrow")}<div><small>إلى</small><b>مطار القاهرة</b></div></div>
+        </div>
+        <div class="stub"><small>ذهاب</small><span class="num">${money(1500)}</span><p>جنيه للعربية<br>ساعتين بس</p><i class="bar"></i></div>
+      </div>
+      <p class="fine">توصيل أو استقبال · الهايس ${hiace(1500)} جنيه</p>
+    </main>` },
+  { theme: "sky", html: `
+    <main class="p2">
+      <h1>من كفر الزيات للمطار</h1>
+      <div class="asign"><div>${ico("plane")}<div><h2>مطار القاهرة</h2><p>من كفر الزيات · لحد صالة السفر</p></div><span class="km">١٦٠<small>كم</small></span></div></div>
+      <div class="pole"><i></i><i></i></div>
+      <div class="plaque"><span class="num">${money(1700)}</span><span>جنيه ذهاب</span></div>
+      <div class="row4">${tiles(["sentra", "fortuner", "mgzs", "peugeot"])}</div>
+      <p class="fine">الهايس لحد ١٢ راكب بـ ${hiace(1700)} جنيه</p>
+    </main>` },
+  { theme: "cream", html: `
+    <main class="p3">
+      <h1>كفر الزيات ⇄ طنطا</h1>
+      <div class="line"><span class="station">كفر<br>الزيات</span><span class="mid">تلت ساعة</span><span class="station">طنطا</span></div>
+      <div class="fares2">
+        <div><span>ذهاب</span><span class="num">${money(230)}</span><small>جنيه</small></div>
+        <div><span>ذهاب وعودة</span><span class="num">${money(400)}</span><small>جنيه</small></div>
+      </div>
+      <div class="row3">${tiles(["accent", "corolla", "lancer"])}</div>
+    </main>` },
+  { theme: "", html: `
+    <main class="p4">
+      <h1>حساب <em>المحلة</em></h1>
+      <div class="split">
+        <div class="receipt">
+          <h3>نجم كار</h3>
+          <p class="meta">إيصال مشوار · طنطا ← المحلة الكبرى</p>
+          <div class="ln"><span>ذهاب</span><span class="num">${money(300)}</span></div>
+          <div class="ln"><span>ذهاب وعودة</span><span class="num">${money(600)}</span></div>
+          <div class="ln"><span>البنزين والكارتة</span><em>شامل</em></div>
+          <div class="ln"><span>العداد</span><em>مفيش</em></div>
+          <p class="tot">نص ساعة · سعر ثابت قبل ما تركب</p>
+        </div>
+        <div class="stack">${tiles(["sunny", "cerato", "optra", "tucson"])}</div>
+      </div>
+    </main>` },
+  { theme: "gold", html: `
+    <main class="p5">
+      <h1>رايح المنصورة؟</h1>
+      <div class="duo">
+        <div>${ico("arrow")}<span>ذهاب</span><span class="num">${money(900)}</span><small>جنيه</small></div>
+        <div>${ico("swap")}<span>ذهاب وعودة</span><span class="num">${money(1200)}</span><small>جنيه</small></div>
+      </div>
+      <span class="save">والرجوع بـ ٣٠٠ جنيه بس!</span>
+      <div class="row4">${tiles(["peugeot", "corolla", "sportage", "sentra"])}</div>
+    </main>` },
+  { theme: "cream", html: `
+    <main class="p6">
+      <h1>يوم في <em>القاهرة</em> ورجوع</h1>
+      <p class="sub">من كفر الزيات، روح خلّص مشاويرك وارجع بيتك</p>
+      <div class="split">
+        <div class="tl">
+          <div class="st"><b>١</b><span>نعدّي عليك<small>من باب البيت في كفر الزيات</small></span></div>
+          <div class="st"><b>٢</b><span>نوصلك القاهرة<small>ساعة ونص بس</small></span></div>
+          <div class="st"><b>٣</b><span>نرجعك البيت<small>في المعاد اللي تحدده</small></span></div>
+          <div class="price"><span class="num">${money(1600)}</span><small>جنيه ذهاب وعودة</small></div>
+        </div>
+        <div class="grid">${tiles(["tucson", "lancer", "sunny", "camry"])}</div>
+      </div>
+    </main>` },
+  { theme: "sea", html: `
+    <main class="p7">
+      <h1>إسكندرية <em>بتناديك</em></h1>
+      <div class="card">
+        <div class="pics">${tiles(["optra", "elantra", "fortuner", "mgzs"])}</div>
+        <div class="back">
+          <div class="stamp"><span class="num">${money(1000)}</span><small>جنيه ذهاب</small></div>
+          <p class="greet">تحياتي من<br>إسكندرية</p>
+          <p class="addr"><small>من: </small>كفر الزيات</p>
+          <p class="addr"><small>إلى: </small>بحر إسكندرية</p>
+          <div class="postmark"><span class="num">${money(1500)}</span><small>ذهاب وعودة</small></div>
+        </div>
+      </div>
+      <p class="sub">ساعة ونص وتبقى على البحر</p>
+    </main>` },
+  { theme: "sunset", html: `
+    <main class="p8">
+      <h1>السخنة بالعيلة</h1>
+      <div class="sunwrap"><div class="sun"><span class="num">${money(3000)}</span><small>ذهاب وعودة</small></div></div>
+      <div class="chips"><span>من طنطا</span><span>٣ ساعات ونص</span><span>الهايس ${hiace(3000)}</span></div>
+      <div class="row4">${tiles(["hiace", "sportage", "sentra", "octavia"])}</div>
+    </main>` },
+  { theme: "", html: `
+    <main class="p9">
+      <h1>طنطا ← <em>شرم الشيخ</em></h1>
+      <div class="map">
+        <svg class="route" viewBox="0 0 984 600" preserveAspectRatio="none">
+          <path d="M0 470 Q 300 420 460 330 T 984 230 V 600 H 0 Z" fill="#9FD3E8" opacity=".6"/>
+          <path d="M860 70 C 760 130 700 120 640 190 S 520 300 470 330 S 360 420 300 470" fill="none" stroke="#fff" stroke-width="26" stroke-linecap="round"/>
+          <path d="M860 70 C 760 130 700 120 640 190 S 520 300 470 330 S 360 420 300 470" fill="none" stroke="#D7263D" stroke-width="10" stroke-dasharray="26 18" stroke-linecap="round"/>
+        </svg>
+        <span class="pinm big" style="left:87.4%;top:11.7%"><i></i>طنطا</span>
+        <span class="pinm" style="left:65%;top:31.7%"><i></i>القاهرة</span>
+        <span class="pinm" style="left:47.8%;top:55%"><i></i>نفق الشهيد أحمد حمدي</span>
+        <span class="pinm big" style="left:30.5%;top:78.3%"><i></i>شرم الشيخ</span>
+        <div class="pricebox"><span class="num">${money(6600)}</span><small>جنيه ذهاب · ٥٥٠ كم</small></div>
+      </div>
+      <div class="row4">${tiles(["fortuner", "tucson", "cerato", "mgzs"])}</div>
+    </main>` },
+];
+
+const n = Number(new URLSearchParams(location.search).get("n") ?? 1);
+const post = POSTS[n - 1];
+document.body.className = post.theme;
+document.body.insertAdjacentHTML("beforeend", `
+  <header class="brand"><img src="../images/logo.svg" alt=""><b>شركة نجم كار</b></header>
+  ${post.html}
+  <div class="cta"><span class="lbl"><svg><use href="#wa"/></svg>احجز مشوارك على واتساب</span><span class="num">${PHONE}</span></div>
+  <p class="link">كل الأسعار والحجز: <b>${SITE}</b></p>`);
+</script>
+</body>
+</html>

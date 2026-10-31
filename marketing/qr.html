@@ -242,7 +242,7 @@ const qrCard = (url, label) => `<div class="qr-card"><div class="code">${qrSvg(u
 const qrw = (url = SITE_URL) => `<div class="qrw"><div class="code">${qrSvg(url)}</div></div>`;
 const vf = (url) => `<div class="vf"><i></i><i></i><i></i><i></i>${qrw(url)}</div>`;
 const tiles = (p) => p.cars.map(tile).join("");
-const ROUTES = [["طنطا ← مطار القاهرة", 1800], ["طنطا ← القاهرة", 1440], ["طنطا ← الإسكندرية", 1800], ["طنطا ← المنصورة", 1080], ["طنطا ← الساحل", 3480]];
+const ROUTES = [["طنطا ← مطار القاهرة", 1500], ["كفر الزيات ← المطار", 1700], ["طنطا ← المنصورة", 900], ["كفر الزيات ← إسكندرية", 1000], ["طنطا ← شرم الشيخ", 6600]];
 const money = (n) => n.toLocaleString("en-US");
 const ARROW = '<svg class="arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M10.6 4.6 3.2 12l7.4 7.4 1.8-1.8L8.1 13.3H21v-2.6H8.1l4.3-4.3z"/></svg>';
 const PIN_SPOTS = [["top:10px;right:0", 5], ["top:10px;left:0", -5], ["bottom:0;right:20px", -3], ["bottom:0;left:20px", 4]];
@@ -271,7 +271,7 @@ const LAYOUTS = {
   sign: (p) => `<div class="gsign"><div><div>${ARROW}<h2>الأسعار والحجز</h2><p>امسح الكود</p></div>${qrw()}</div></div><div class="cars3">${tiles(p)}</div><div class="chips"><span>المطار</span><span>كل المحافظات</span><span>من الباب للباب</span></div>`,
   pins: (p) => p.cars.map((c, i) => `<div class="pin c" style="${PIN_SPOTS[i][0]};transform:rotate(${PIN_SPOTS[i][1]}deg)"><img src="../images/${c}.jpg" style="object-position:${CARS[c][2]}" alt=""><p>${CARS[c][0]}</p></div>`).join("")
     + `<div class="pin q">${qrw()}<p>امسح هنا</p></div>`,
-  board: (p) => `<div class="board"><div class="bar"><span>الوجهة</span><span>ملاكي من</span></div>${ROUTES.map(([r, v]) => `<div class="r"><span>${r}</span><strong>${money(v)}</strong></div>`).join("")}</div><div class="qcol">${vf()}<p>باقي الأسعار</p></div><div class="cars3">${tiles(p)}</div>`,
+  board: (p) => `<div class="board"><div class="bar"><span>الوجهة</span><span>ذهاب</span></div>${ROUTES.map(([r, v]) => `<div class="r"><span>${r}</span><strong>${money(v)}</strong></div>`).join("")}</div><div class="qcol">${vf()}<p>باقي الأسعار</p></div><div class="cars3">${tiles(p)}</div>`,
   chat: (p) => `<div class="chatq"><div class="head"><img src="../images/logo.svg" alt="">شركة نجم كار</div><div class="msg me">مساء الخير، ممكن أسعار المشاوير؟</div><div class="msg us qrm">${qrw()}<p>أكيد! امسح الكود ده وهتلاقي كل الأسعار والعربيات 👇</p></div><div class="msg us pics">${tiles(p)}</div><div class="msg me">تمام، شكراً 👍</div></div>`,
   driving: (p) => `<div class="num"><span class="learner">ل</span><p>من الصفر<br>لحد الطريق<small>أوتوماتيك ومانيوال</small></p></div><div class="qcol">${vf(SITE_URL + "#driving")}<p>احجز حصتك</p></div><div class="cars4">${tiles(p)}</div>`,
   big: (p) => `<div class="num"><strong>12</strong><p>جنيه<br>للكيلو<small>والهايس +10% بس</small></p></div><div class="qcol">${qrw()}<p>احسب مشوارك</p></div><div class="cars4">${tiles(p)}</div>`,
